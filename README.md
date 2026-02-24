@@ -798,8 +798,7 @@
      <div class="logo-container"><img src="https://i.meee.com.tw/4Ojn0aJ.png" alt="TePe Logo" onerror="this.style.display='none';">
      </div>
      <h1 id="formTitle">TePe醫師群組訂單表單</h1>
-     <p id="formSubtitle">本月優惠：買1-4盒享9折｜買5-9盒享72折再送1盒(或2袋)｜買10盒以上享66折再送2盒(或4袋)｜【袋裝與卡裝可合併計算折扣：2包袋裝=1盒，贈品以價低者為優先】</p>
-
+     <p id="formSubtitle">本月優惠：卡裝與牙刷買1-2盒享9折、3-4盒享7折、5盒以上享6折｜袋裝買2-4袋享9折、6-8袋享7折、10袋以上享6折｜【袋裝與卡裝可合併計算折扣：2包袋裝=1盒】</p>
     </div>
     <div class="form-body">
      <form id="orderForm">
@@ -1129,10 +1128,9 @@
     };
 
     const defaultConfig = {
-    form_title: 'TePe醫師群組訂單表單',
-    form_subtitle: '本月優惠：買1-4盒享9折｜買5-9盒享72折再送1盒(或2袋)｜買10盒以上享66折再送2盒(或4袋)｜【袋裝與卡裝可合併計算折扣：2包袋裝=1盒，贈品以價低者為優先】'
-};
-
+      form_title: 'TePe醫師群組訂單表單',
+      form_subtitle: '本月優惠：卡裝與牙刷買1-2盒享9折、3-4盒享7折、5盒以上享6折｜袋裝買2-4袋享9折、6-8袋享7折、10袋以上享6折｜【袋裝與卡裝可合併計算折扣：2包袋裝=1盒】'
+    };
 
     function updateGallery(productId) {
       const state = galleryState[productId];
@@ -1343,201 +1341,165 @@
       });
 
       citySelect.addEventListener('change', function() {
+        districtSelect.innerHTML = '<option value="">請選擇區域</option>';
+        districtSelect.disabled = false;
 
-// --- 新增的核心運算函數：負責處理自動選取最便宜商品為贈品的邏輯 ---
-function getOrderCalculation() {
-    let boxProducts = 0;
-    let bagProducts = 0;
-    const bagProductIds = ['product3', 'product5', 'product7'];
-    let atomicItems = []; // 將所有產品拆解成單一單位來進行比價
+        if (this.value && taiwanRegions[this.value]) {
+          taiwanRegions[this.value].forEach(district => {
+            const option = document.createElement('option');
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+          });
+        } else {
+          districtSelect.disabled = true;
+        }
+      });
+    }
 
-    document.querySelectorAll('.quantity-input').forEach(input => {
+    function calculateTotal() {
+      let boxProducts = 0;
+      let bagProducts = 0;
+      let totalSubtotal = 0;
+      const selectedItems = [];
+
+      const bagProductIds = ['product3', 'product5', 'product7'];
+
+      document.querySelectorAll('.quantity-input').forEach(input => {
         const quantity = parseInt(input.value) || 0;
         if (quantity > 0) {
-            const price = parseInt(input.dataset.price);
-            const productId = input.dataset.productId;
-            const product = products.find(p => p.id === productId);
-            const optionIndex = input.id.split('-')[15];
-            const option = product.options[optionIndex];
-            const isBag = bagProductIds.includes(productId);
-
-            if (isBag) bagProducts += quantity;
-            else boxProducts += quantity;
-
-            // 將數量拆解，方便後續挑選最低價的作為贈品
-            for (let i = 0; i < quantity; i++) {
-                atomicItems.push({
-                    id: productId,
-                    name: product.name,
-                    optionIndex: optionIndex,
-                    optionLabel: option.label,
-                    price: price,
-                    isBag: isBag,
-                    eqValue: isBag ? 0.5 : 1.0 // 袋裝算半盒
-                });
-            }
+          const price = parseInt(input.dataset.price);
+          const productId = input.dataset.productId;
+          const product = products.find(p => p.id === productId);
+          const optionIndex = input.id.split('-')[1];
+          const option = product.options[optionIndex];
+          
+          if (bagProductIds.includes(productId)) {
+            bagProducts += quantity;
+          } else {
+            boxProducts += quantity;
+          }
+          
+          totalSubtotal += quantity * price;
+          
+          selectedItems.push({
+            productName: product.name,
+            optionLabel: option.label,
+            quantity: quantity,
+            price: price,
+            subtotal: quantity * price
+          });
         }
-    });
+      });
 
-    // 依照價格由低到高排序，確保贈品優先選低價者
-    atomicItems.sort((a, b) => a.price - b.price);
+      const bagValidationWarning = document.getElementById('bagValidationWarning');
+      const isBagValid = bagProducts === 0 || bagProducts % 2 === 0;
+      
+      if (!isBagValid) {
+        bagValidationWarning.style.display = 'block';
+      } else {
+        bagValidationWarning.style.display = 'none';
+      }
 
-    let totalEq = boxProducts + (bagProducts / 2);
-    let paidEq, freeEqTarget, tierDiscount, tierLabel;
-
-    // 判斷客戶的購買級距與應該獲得的贈品數量
-    if (totalEq >= 12) { // 買10盒以上 + 送2盒
-        paidEq = totalEq - 2; freeEqTarget = 2; tierDiscount = 0.66; tierLabel = '合併折扣（66折）：';
-    } else if (totalEq >= 10) { // 買10盒以上 (但未將贈品加入購物車)
-        paidEq = 10; freeEqTarget = 2; tierDiscount = 0.66; tierLabel = '合併折扣（66折）：';
-    } else if (totalEq >= 6) { // 買5-9盒 + 送1盒
-        paidEq = totalEq - 1; freeEqTarget = 1; tierDiscount = 0.72; tierLabel = '合併折扣（72折）：';
-    } else if (totalEq >= 5) { // 買5-9盒 (但未將贈品加入購物車)
-        paidEq = 5; freeEqTarget = 1; tierDiscount = 0.72; tierLabel = '合併折扣（72折）：';
-    } else if (totalEq >= 1) { // 買1-4盒
-        paidEq = totalEq; freeEqTarget = 0; tierDiscount = 0.90; tierLabel = '合併折扣（9折）：';
-    } else {
-        paidEq = 0; freeEqTarget = 0; tierDiscount = 1; tierLabel = '折扣：';
-    }
-
-    let actualFreeEq = totalEq - paidEq; // 目前已在購物車內的贈品額度
-    let missingFreeEq = freeEqTarget - actualFreeEq; // 客戶忘記加入購物車的贈品額度
-
-    let freeBudget = actualFreeEq;
-    let freeItemsList = [];
-    let paidItemsList = [];
-
-    // 分配最低價商品為贈品
-    for (let item of atomicItems) {
-        if (freeBudget >= item.eqValue) {
-            freeBudget -= item.eqValue;
-            freeItemsList.push({...item, finalPrice: 0});
-        } else {
-            paidItemsList.push({...item, finalPrice: item.price});
-        }
-    }
-
-    // 將拆解的商品重新合併以顯示在明細中
-    let itemMap = new Map();
-    for (let item of [...freeItemsList, ...paidItemsList]) {
-        let key = `${item.id}-${item.optionIndex}-${item.finalPrice === 0 ? 'free' : 'paid'}`;
-        if (!itemMap.has(key)) {
-            itemMap.set(key, {
-                productId: item.id,
-                name: item.finalPrice === 0 ? item.name + ' (贈品)' : item.name,
-                option: item.optionLabel,
-                price: item.finalPrice, // 確保郵件中的單價顯示為0
-                originalPrice: item.price,
-                finalPrice: item.finalPrice,
-                quantity: 0,
-                subtotal: 0
-            });
-        }
-        let row = itemMap.get(key);
-        row.quantity += 1;
-        row.subtotal += item.finalPrice;
-    }
-
-    let finalSummaryItems = Array.from(itemMap.values());
-    let paidSubtotal = paidItemsList.reduce((sum, item) => sum + item.price, 0);
-    let discountedSubtotal = paidSubtotal * tierDiscount;
-    let discountAmount = paidSubtotal - discountedSubtotal;
-    let shipping = (discountedSubtotal > 0 && discountedSubtotal < 3000) ? 120 : 0;
-
-    return {
-        boxProducts, bagProducts, totalEq, missingFreeEq, finalSummaryItems,
-        tierLabel, paidSubtotal, discountAmount, shipping, 
-        finalTotal: discountedSubtotal + shipping,
-        isBagValid: bagProducts === 0 || bagProducts % 2 === 0,
-        hasProducts: finalSummaryItems.length > 0
-    };
-}
-
-// --- 更新後的畫面顯示與提示邏輯 ---
-function calculateTotal() {
-    const calc = getOrderCalculation();
-
-    const bagValidationWarning = document.getElementById('bagValidationWarning');
-    bagValidationWarning.style.display = calc.isBagValid ? 'none' : 'block';
-
-    const orderDetails = document.getElementById('orderDetails');
-    const orderDetailsList = document.getElementById('orderDetailsList');
-
-    if (calc.hasProducts) {
+      const orderDetails = document.getElementById('orderDetails');
+      const orderDetailsList = document.getElementById('orderDetailsList');
+      
+      if (selectedItems.length > 0) {
         orderDetails.style.display = 'block';
-        orderDetailsList.innerHTML = calc.finalSummaryItems.map(item => `
-            <div style="background: ${item.finalPrice === 0 ? '#fff9e6' : 'white'}; padding: 12px; border-radius: 8px; border: 1px solid ${item.finalPrice === 0 ? '#ffd700' : '#e0e0e0'}; margin-bottom: 8px;">
-                <div style="color: ${item.finalPrice === 0 ? '#d4a520' : '#005ea4'}; font-weight: 600; margin-bottom: 4px;">
-                    ${item.name} ${item.finalPrice === 0 ? '<span style="background:#ffd700; color:#fff; padding:2px 6px; border-radius:4px; font-size:12px; margin-left:4px;">贈品</span>' : ''}
-                </div>
-                <div style="color: #666; font-size: 14px; margin-bottom: 4px;">${item.option}</div>
-                <div style="display: flex; justify-content: space-between; color: ${item.finalPrice === 0 ? '#d4a520' : '#005ea4'}; font-size: 14px;">
-                    <span>數量：${item.quantity}</span>
-                    <span>${item.finalPrice === 0 ? 'NT$ 0' : 'NT$ ' + item.subtotal.toLocaleString()}</span>
-                </div>
+        orderDetailsList.innerHTML = selectedItems.map(item => `
+          <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e0e0e0;">
+            <div style="color: #005ea4; font-weight: 600; margin-bottom: 4px;">${item.productName}</div>
+            <div style="color: #666; font-size: 14px; margin-bottom: 4px;">${item.optionLabel}</div>
+            <div style="display: flex; justify-content: space-between; color: #005ea4; font-size: 14px;">
+              <span>數量：${item.quantity}</span>
+              <span>NT$ ${item.subtotal.toLocaleString()}</span>
             </div>
+          </div>
         `).join('');
-    } else {
+      } else {
         orderDetails.style.display = 'none';
-    }
+      }
 
-    // 自動提示客戶挑選贈品的機制
-    let missingGiftPrompt = document.getElementById('missingGiftPrompt');
-    if (!missingGiftPrompt) {
-        missingGiftPrompt = document.createElement('div');
-        missingGiftPrompt.id = 'missingGiftPrompt';
-        missingGiftPrompt.style.cssText = 'background: #d4edda; border: 2px solid #c3e6cb; color: #155724; padding: 16px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: 600;';
-        document.getElementById('orderDetails').parentNode.insertBefore(missingGiftPrompt, document.getElementById('orderDetails'));
-    }
-    
-    if (calc.missingFreeEq > 0 && calc.isBagValid) {
-        missingGiftPrompt.style.display = 'block';
-        missingGiftPrompt.innerHTML = `🎁 您目前符合優惠資格，<strong>還可以再免費挑選 ${calc.missingFreeEq * 2} 包袋裝 或 ${calc.missingFreeEq} 盒卡裝/牙刷！</strong><br><span style="font-size:14px; font-weight:normal;">（請直接在上方產品列表增加數量，系統會自動將價低者轉為 0 元）</span>`;
-    } else {
-        missingGiftPrompt.style.display = 'none';
-    }
+      const bagEquivalentBoxes = Math.floor(bagProducts / 2);
+      const totalEquivalentBoxes = boxProducts + bagEquivalentBoxes;
 
-    let totalBoxesDisplay = '';
-    let bagEquivalentBoxes = Math.floor(calc.bagProducts / 2);
-    if (calc.bagProducts > 0 && calc.boxProducts > 0) {
-        totalBoxesDisplay = `${calc.bagProducts}包袋裝 + ${calc.boxProducts}盒卡裝/牙刷 = ${calc.totalEq}盒`;
-    } else if (calc.bagProducts > 0) {
-        totalBoxesDisplay = `${calc.bagProducts}包袋裝 = ${bagEquivalentBoxes}盒`;
-    } else {
-        totalBoxesDisplay = `${calc.boxProducts}盒`;
-    }
+      let discountRate = 0;
+      let discountLabel = '';
+      if (totalEquivalentBoxes >= 5) {
+        discountRate = 0.6;
+        discountLabel = '合併折扣（6折）：';
+      } else if (totalEquivalentBoxes >= 3) {
+        discountRate = 0.7;
+        discountLabel = '合併折扣（7折）：';
+      } else if (totalEquivalentBoxes >= 1) {
+        discountRate = 0.9;
+        discountLabel = '合併折扣（9折）：';
+      } else {
+        discountLabel = '折扣：';
+      }
 
-    document.getElementById('totalBoxes').textContent = totalBoxesDisplay;
-    document.getElementById('subtotal').textContent = `NT$ ${calc.paidSubtotal.toLocaleString()}`;
-    document.getElementById('discountLabel').textContent = calc.tierLabel;
-    document.getElementById('discount').textContent = calc.discountAmount > 0 ? `-NT$ ${Math.round(calc.discountAmount).toLocaleString()}` : 'NT$ 0';
-    document.getElementById('shipping').textContent = `NT$ ${calc.shipping}`;
+      const discountedSubtotal = totalSubtotal * discountRate;
+      const discountAmount = totalSubtotal - discountedSubtotal;
 
-    const finalTotalRow = document.querySelector('.summary-row.total');
-    if (calc.isBagValid) {
+      let shipping = 0;
+      if (discountedSubtotal > 0 && discountedSubtotal < 3000) {
+        shipping = 120;
+      }
+
+      const finalTotal = discountedSubtotal + shipping;
+
+      let totalBoxesDisplay = '';
+      if (bagProducts > 0 && boxProducts > 0) {
+        totalBoxesDisplay = `${bagProducts}包袋裝 + ${boxProducts}盒卡裝/牙刷 = ${totalEquivalentBoxes}盒`;
+      } else if (bagProducts > 0) {
+        totalBoxesDisplay = `${bagProducts}包袋裝 = ${bagEquivalentBoxes}盒`;
+      } else {
+        totalBoxesDisplay = `${boxProducts}盒`;
+      }
+
+      document.getElementById('totalBoxes').textContent = totalBoxesDisplay;
+      document.getElementById('subtotal').textContent = `NT$ ${totalSubtotal.toLocaleString()}`;
+      document.getElementById('discountLabel').textContent = discountLabel;
+      document.getElementById('discount').textContent = discountAmount > 0 ? `-NT$ ${Math.round(discountAmount).toLocaleString()}` : 'NT$ 0';
+      document.getElementById('shipping').textContent = `NT$ ${shipping}`;
+      
+      const finalTotalRow = document.querySelector('.summary-row.total');
+      if (isBagValid) {
         finalTotalRow.style.display = 'flex';
-        document.getElementById('finalTotal').textContent = `NT$ ${Math.round(calc.finalTotal).toLocaleString()}`;
-    } else {
+        document.getElementById('finalTotal').textContent = `NT$ ${Math.round(finalTotal).toLocaleString()}`;
+      } else {
         finalTotalRow.style.display = 'none';
-    }
+      }
 
-    const gift3Box = document.getElementById('gift3Box');
-    const gift5Box = document.getElementById('gift5Box');
-    if (calc.totalEq >= 3) {
+      const gift3Box = document.getElementById('gift3Box');
+      const gift5Box = document.getElementById('gift5Box');
+      
+      if (totalEquivalentBoxes >= 3) {
         gift3Box.classList.add('show');
-        document.querySelectorAll('input[name="gift3Box"]').forEach(i => i.required = true);
-    } else {
+        document.querySelectorAll('input[name="gift3Box"]').forEach(input => {
+          input.required = true;
+        });
+      } else {
         gift3Box.classList.remove('show');
-        document.querySelectorAll('input[name="gift3Box"]').forEach(i => { i.required = false; i.checked = false; });
-    }
-    if (calc.totalEq >= 5) {
+        document.querySelectorAll('input[name="gift3Box"]').forEach(input => {
+          input.required = false;
+          input.checked = false;
+        });
+      }
+
+      if (totalEquivalentBoxes >= 5) {
         gift5Box.classList.add('show');
-        document.querySelectorAll('input[name="gift5Box"]').forEach(i => i.required = true);
-    } else {
+        document.querySelectorAll('input[name="gift5Box"]').forEach(input => {
+          input.required = true;
+        });
+      } else {
         gift5Box.classList.remove('show');
-        document.querySelectorAll('input[name="gift5Box"]').forEach(i => { i.required = false; i.checked = false; });
+        document.querySelectorAll('input[name="gift5Box"]').forEach(input => {
+          input.required = false;
+          input.checked = false;
+        });
+      }
     }
-}
 
     document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
       radio.addEventListener('change', function() {
@@ -1683,39 +1645,80 @@ function calculateTotal() {
           <h2>感謝您的購買！</h2>
           <p>我們將於確認收款後立即出貨，感謝您對TePe的支持！</p>
           <p style="margin-top: 20px;">✅ 訂單確認郵件已發送至您的信箱</p>
-        document.getElementById('orderForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+        `;
+      }
+    }
 
-    // 呼叫我們剛剛建立的核心運算函數取得最終結果
-    const calc = getOrderCalculation();
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-    if (!calc.hasProducts) {
+      let hasProducts = false;
+      const selectedProducts = [];
+      let boxProducts = 0;
+      let bagProducts = 0;
+      const bagProductIds = ['product3', 'product5', 'product7'];
+      
+      document.querySelectorAll('.quantity-input').forEach(input => {
+        const quantity = parseInt(input.value) || 0;
+        if (quantity > 0) {
+          hasProducts = true;
+          const productId = input.dataset.productId;
+          const product = products.find(p => p.id === productId);
+          const optionIndex = input.id.split('-')[1];
+          
+          if (bagProductIds.includes(productId)) {
+            bagProducts += quantity;
+          } else {
+            boxProducts += quantity;
+          }
+          
+          selectedProducts.push({
+            name: product.name,
+            option: product.options[optionIndex].label,
+            quantity: quantity,
+            price: product.price,
+            subtotal: quantity * product.price
+          });
+        }
+      });
+
+      if (!hasProducts) {
         const errorDiv = document.createElement('div');
         errorDiv.style.cssText = 'background: #f8d7da; border: 2px solid #f5c6cb; color: #721c24; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
         errorDiv.textContent = '請至少選擇一項產品並輸入數量';
         const submitBtn = document.getElementById('submitButton');
         if (!document.querySelector('.error-message')) {
-            submitBtn.parentNode.insertBefore(errorDiv, submitBtn);
+          submitBtn.parentNode.insertBefore(errorDiv, submitBtn);
+          errorDiv.className = 'error-message';
+          setTimeout(() => errorDiv.remove(), 3000);
         }
-        errorDiv.className = 'error-message';
-        setTimeout(() => errorDiv.remove(), 3000);
         return;
-    }
+      }
 
-    if (!calc.isBagValid) {
+      if (bagProducts > 0 && bagProducts % 2 !== 0) {
         const errorDiv = document.createElement('div');
         errorDiv.style.cssText = 'background: #fff3cd; border: 2px solid #ffc107; color: #856404; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center; font-weight: 600;';
-        errorDiv.textContent = '⚠️ 【袋裝】產品的總數量必須為2的倍數才能提交訂單！目前袋裝總數：' + calc.bagProducts;
+        errorDiv.textContent = '⚠️ 【袋裝】產品的總數量必須為2的倍數才能提交訂單！目前袋裝總數：' + bagProducts;
         const submitBtn = document.getElementById('submitButton');
         const existingError = document.querySelector('.bag-error-message');
-        if (existingError) existingError.remove();
+        if (existingError) {
+          existingError.remove();
+        }
         submitBtn.parentNode.insertBefore(errorDiv, submitBtn);
         errorDiv.className = 'bag-error-message';
         setTimeout(() => errorDiv.remove(), 5000);
         return;
-    }
+      }
 
-    const formData = {
+      const bagEquivalentBoxes = Math.floor(bagProducts / 2);
+      const totalEquivalentBoxes = boxProducts + bagEquivalentBoxes;
+      
+      const subtotalText = document.getElementById('subtotal').textContent.replace('NT$ ', '').replace(',', '');
+      const discountText = document.getElementById('discount').textContent.replace('-NT$ ', '').replace('NT$ ', '').replace(',', '');
+      const shippingText = document.getElementById('shipping').textContent.replace('NT$ ', '');
+      const finalTotalText = document.getElementById('finalTotal').textContent.replace('NT$ ', '').replace(',', '');
+
+      const formData = {
         orderNumber: 'TP' + Date.now(),
         paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
         doctorName: document.getElementById('doctorName').value,
@@ -1728,59 +1731,77 @@ function calculateTotal() {
         invoiceType: document.querySelector('input[name="invoiceType"]:checked').value,
         invoiceTitle: document.getElementById('invoiceTitle').value || '',
         invoiceTaxId: document.getElementById('invoiceTaxId').value || '',
-        // 將包含「(贈品)」標記的最終明細存入資料庫
-        products: JSON.stringify(calc.finalSummaryItems), 
-        bagProductsCount: calc.bagProducts,
-        boxProductsCount: calc.boxProducts,
-        totalEquivalentBoxes: calc.totalEq,
-        subtotal: calc.paidSubtotal,
-        discount: Math.round(calc.discountAmount || 0),
-        shipping: calc.shipping,
-        finalTotal: Math.round(calc.finalTotal),
-        displayRack3Box: calc.totalEq >= 3 ? (document.querySelector('input[name="gift3Box"]:checked')?.value || '否') : '不適用',
-        displayRack5Box: calc.totalEq >= 5 ? (document.querySelector('input[name="gift5Box"]:checked')?.value || '否') : '不適用',
+        products: JSON.stringify(selectedProducts),
+        bagProductsCount: bagProducts,
+        boxProductsCount: boxProducts,
+        totalEquivalentBoxes: totalEquivalentBoxes,
+        subtotal: parseFloat(subtotalText),
+        discount: parseFloat(discountText || 0),
+        shipping: parseFloat(shippingText),
+        finalTotal: parseFloat(finalTotalText),
+        displayRack3Box: totalEquivalentBoxes >= 3 ? (document.querySelector('input[name="gift3Box"]:checked')?.value || '否') : '不適用',
+        displayRack5Box: totalEquivalentBoxes >= 5 ? (document.querySelector('input[name="gift5Box"]:checked')?.value || '否') : '不適用',
         notes: document.getElementById('notes').value || '',
         submittedAt: new Date().toISOString()
-    };
+      };
 
-    document.getElementById('submitButton').disabled = true;
-    document.getElementById('loadingSpinner').classList.add('show');
+      document.getElementById('submitButton').disabled = true;
+      document.getElementById('loadingSpinner').classList.add('show');
 
-    try {
+      try {
         if (orderData.length >= 999) {
-            const limitDiv = document.createElement('div');
-            limitDiv.style.cssText = 'background: #fff3cd; border: 2px solid #ffc107; color: #856404; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
-            limitDiv.textContent = '訂單數量已達上限（999筆），請聯繫管理員。';
-            document.getElementById('submitButton').parentNode.insertBefore(limitDiv, document.getElementById('submitButton'));
-            document.getElementById('submitButton').disabled = false;
-            document.getElementById('loadingSpinner').classList.remove('show');
-            return;
+          const limitDiv = document.createElement('div');
+          limitDiv.style.cssText = 'background: #fff3cd; border: 2px solid #ffc107; color: #856404; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
+          limitDiv.textContent = '訂單數量已達上限（999筆），請聯繫管理員。';
+          document.getElementById('submitButton').parentNode.insertBefore(limitDiv, document.getElementById('submitButton'));
+          document.getElementById('submitButton').disabled = false;
+          document.getElementById('loadingSpinner').classList.remove('show');
+          return;
         }
 
         const result = await window.dataSdk.create(formData);
+
         if (result.isOk) {
-            // 在這裡傳入 calc.finalSummaryItems，這樣顧客收到的 Email 裡面也會標示哪項是贈品且單價為0
-            const emailResult = await sendOrderEmail(formData, calc.finalSummaryItems); 
+          const emailResult = await sendOrderEmail(formData, selectedProducts);
+          
+          if (emailResult.success) {
             showThankYouPage(formData.paymentMethod);
+          } else {
+            showThankYouPage(formData.paymentMethod);
+          }
         } else {
-            console.error('Data SDK 儲存失敗:', result.error);
-            const errorDiv = document.createElement('div');
-            errorDiv.style.cssText = 'background: #f8d7da; border: 2px solid #f5c6cb; color: #721c24; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
-            errorDiv.textContent = '訂單提交失敗，請稍後再試：' + (result.error?.message || '未知錯誤');
-            document.getElementById('submitButton').parentNode.insertBefore(errorDiv, document.getElementById('submitButton'));
+          console.error('Data SDK 儲存失敗:', result.error);
+          const errorDiv = document.createElement('div');
+          errorDiv.style.cssText = 'background: #f8d7da; border: 2px solid #f5c6cb; color: #721c24; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
+          errorDiv.textContent = '訂單提交失敗，請稍後再試：' + (result.error?.message || '未知錯誤');
+          document.getElementById('submitButton').parentNode.insertBefore(errorDiv, document.getElementById('submitButton'));
         }
-    } catch (error) {
+      } catch (error) {
         console.error('訂單提交發生錯誤:', error);
         const errorDiv = document.createElement('div');
         errorDiv.style.cssText = 'background: #f8d7da; border: 2px solid #f5c6cb; color: #721c24; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;';
         errorDiv.textContent = '訂單提交發生錯誤：' + error.message;
         document.getElementById('submitButton').parentNode.insertBefore(errorDiv, document.getElementById('submitButton'));
-    } finally {
+      } finally {
         document.getElementById('submitButton').disabled = false;
         document.getElementById('loadingSpinner').classList.remove('show');
-    }
-});
+      }
+    });
 
+    async function onConfigChange(config) {
+      const formTitle = document.getElementById('formTitle');
+      const formSubtitle = document.getElementById('formSubtitle');
+
+      formTitle.textContent = config.form_title || defaultConfig.form_title;
+      formSubtitle.textContent = config.form_subtitle || defaultConfig.form_subtitle;
+    }
+
+    async function init() {
+      initRegionSelectors();
+      initProducts();
+
+      if (window.dataSdk) {
+        const initResult = await window.dataSdk.init(dataHandler);
         if (!initResult.isOk) {
           console.error('Data SDK 初始化失敗:', initResult.error);
         }
@@ -1812,3 +1833,4 @@ function calculateTotal() {
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d2bf9ad07b2a9a9',t:'MTc3MTkwNDc4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
