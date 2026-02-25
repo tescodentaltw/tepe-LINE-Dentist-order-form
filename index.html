@@ -1094,7 +1094,7 @@
     </div>
    </footer>
   </div>
-  <script>
+ <script>
     // Taiwan cities and districts
     const taiwanData = {
       "台北市": ["中正區", "大同區", "中山區", "松山區", "大安區", "萬華區", "信義區", "士林區", "北投區", "內湖區", "南港區", "文山區"],
@@ -1174,6 +1174,7 @@
 
     let quantities = {};
     let currentOrders = [];
+    let currentCart = { paid: [], gifts: [] }; // 用於儲存當前計算的產品與贈品
 
     const defaultConfig = {
       form_title: '醫師群組下單專屬表單'
@@ -1279,11 +1280,9 @@
       let maxGiftEquivalentBoxes = 0;
       
       if (equivalentBoxes >= 5 && equivalentBoxes <= 9) {
-        // 5-9 boxes: can gift up to 1 box equivalent (2 bags or 1 box)
         giftThreshold = 5;
         maxGiftEquivalentBoxes = 1;
       } else if (equivalentBoxes >= 10) {
-        // 10+ boxes: can gift up to 2 box equivalents (4 bags or 2 boxes)
         giftThreshold = 10;
         maxGiftEquivalentBoxes = 2;
       }
@@ -1292,7 +1291,6 @@
       let autoGiftEquivalentBoxes = 0;
       
       if (equivalentBoxes > giftThreshold && giftThreshold > 0) {
-        // Gift is auto-allocated when exceeding threshold
         autoGiftEquivalentBoxes = Math.min(equivalentBoxes - giftThreshold, maxGiftEquivalentBoxes);
       }
       
@@ -1309,19 +1307,18 @@
           }
         });
         
-        // Remove products with zero quantity
         paidProducts = paidProducts.filter(p => p.qty > 0);
-        
-        // Recalculate paid total
         paidTotal = paidProducts.reduce((sum, p) => sum + (p.price * p.qty), 0);
       }
       
-      // Determine optional gift availability
+      // 儲存當前購物車明細，供 Email 使用
+      currentCart.paid = paidProducts;
+      currentCart.gifts = giftsData;
+      
       let optionalGiftEquivalentBoxes = 0;
       let hasOptionalGifts = false;
       
       if (equivalentBoxes === giftThreshold && giftThreshold > 0) {
-        // Exactly at threshold: show optional gift reminder
         optionalGiftEquivalentBoxes = maxGiftEquivalentBoxes;
         hasOptionalGifts = true;
       }
@@ -1378,7 +1375,7 @@
           giftProductsSection.classList.add('hidden');
         }
         
-        // Gift reminder (for optional gifts when exactly at threshold)
+        // Gift reminder
         const giftReminder = document.getElementById('giftReminder');
         const giftReminderText = document.getElementById('giftReminderText');
         
@@ -1435,12 +1432,11 @@
       updateSubmitButton(isBagCountValid && selectedProducts.length > 0);
     }
 
-    // Allocate gifts from cheapest products (bags > boxes, by price)
+    // Allocate gifts from cheapest products
     function allocateGiftsFromCheapest(products, equivalentBoxesToAllocate) {
       const gifts = [];
       let remainingEquivalentBoxes = equivalentBoxesToAllocate;
       
-      // Sort products by price (lowest first), then by type (bags before boxes)
       const sortedProducts = [...products].sort((a, b) => {
         if (a.price !== b.price) return a.price - b.price;
         if (a.type === 'bag' && b.type === 'box') return -1;
@@ -1448,7 +1444,6 @@
         return 0;
       });
       
-      // Allocate gifts
       for (const product of sortedProducts) {
         if (remainingEquivalentBoxes <= 0) break;
         
@@ -1457,41 +1452,24 @@
           : product.qty;
         
         if (productEquivalentBoxes >= remainingEquivalentBoxes) {
-          // Allocate remaining boxes from this product
           let giftQty = remainingEquivalentBoxes;
           
           if (product.type === 'bag') {
-            // Convert equivalent boxes to bags
             giftQty = Math.min(remainingEquivalentBoxes * 2, product.qty);
-            // Round down to nearest even number for bags
             giftQty = Math.floor(giftQty / 2) * 2;
           }
           
           gifts.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            qty: giftQty,
-            type: product.type
+            id: product.id, name: product.name, price: product.price, qty: giftQty, type: product.type
           });
-          
-          remainingEquivalentBoxes -= (product.type === 'bag' 
-            ? Math.floor(giftQty / 2) 
-            : giftQty);
+          remainingEquivalentBoxes -= (product.type === 'bag' ? Math.floor(giftQty / 2) : giftQty);
         } else {
-          // Allocate entire product as gift
           gifts.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            qty: product.qty,
-            type: product.type
+            id: product.id, name: product.name, price: product.price, qty: product.qty, type: product.type
           });
-          
           remainingEquivalentBoxes -= productEquivalentBoxes;
         }
       }
-      
       return gifts;
     }
 
@@ -1517,17 +1495,14 @@
     function getTotalBagCount() {
       let bagCount = 0;
       document.querySelectorAll('.product-card[data-type="bag"]').forEach(card => {
-        const productId = card.dataset.product;
-        bagCount += quantities[productId] || 0;
+        bagCount += quantities[card.dataset.product] || 0;
       });
       return bagCount;
     }
 
     function getTotalProductCount() {
       let count = 0;
-      Object.values(quantities).forEach(qty => {
-        count += qty;
-      });
+      Object.values(quantities).forEach(qty => count += qty);
       return count;
     }
 
@@ -1538,8 +1513,7 @@
       
       Object.keys(taiwanData).forEach(city => {
         const option = document.createElement('option');
-        option.value = city;
-        option.textContent = city;
+        option.value = city; option.textContent = city;
         citySelect.appendChild(option);
       });
       
@@ -1551,8 +1525,7 @@
           districtSelect.disabled = false;
           taiwanData[selectedCity].forEach(district => {
             const option = document.createElement('option');
-            option.value = district;
-            option.textContent = district;
+            option.value = district; option.textContent = district;
             districtSelect.appendChild(option);
           });
         } else {
@@ -1602,12 +1575,21 @@
       
       const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || '';
       
+      // 將產品明細轉為換行的易讀文字
+      const productsText = currentCart.paid.map(p => `${p.name} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}`).join('\n');
+      let giftsText = currentCart.gifts.map(p => `${p.name} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}`).join('\n');
+      
+      // 如果選擇先匯款，自動在贈品加上特定文字
+      if (selectedPaymentMethod === 'transfer') {
+        giftsText += (giftsText ? '\n' : '') + '🎁 加贈：I型牙間刷（超軟刷毛）綜合8支袋裝 x 1';
+      }
+
       const formData = {
         order_id: 'ORD-' + Date.now(),
         payment_method: selectedPaymentMethod,
         doctor_name: document.getElementById('doctorName').value,
         phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value, // 新增 Email 欄位收集
+        email: document.getElementById('email').value,
         clinic_name: document.getElementById('clinicName').value,
         city: document.getElementById('city').value,
         district: document.getElementById('district').value,
@@ -1618,11 +1600,8 @@
         want_chair_stand: document.querySelector('input[name="chairStand"]:checked')?.value || 'N/A',
         want_magnetic_stand: document.querySelector('input[name="magneticStand"]:checked')?.value || 'N/A',
         notes: document.getElementById('notes').value,
-        products: JSON.stringify(Object.entries(quantities).filter(([k, v]) => v > 0).map(([k, v]) => ({
-          name: productNames[k],
-          qty: v
-        }))),
-        gifts: '',
+        products: JSON.stringify(Object.entries(quantities).filter(([k, v]) => v > 0).map(([k, v]) => ({ name: productNames[k], qty: v }))),
+        gifts: giftsText,
         subtotal: document.getElementById('subtotalDisplay').textContent,
         discount_rate: document.getElementById('discountRateDisplay').textContent,
         shipping_fee: document.getElementById('shippingRow').classList.contains('hidden') ? 0 : 120,
@@ -1631,15 +1610,27 @@
       };
       
       try {
-        // 先嘗試發送 Email 通知 (透過 EmailJS)
-        // 注意：需確保 EmailJS 模板 (TePeLINEDentist) 內的變數與下方的變數名稱相符
+        // 設定傳送給 EmailJS 模板的超完整變數
         const templateParams = {
             order_id: formData.order_id,
             doctor_name: formData.doctor_name,
-            email: formData.email,     // 給信件收件人的信箱
             phone: formData.phone,
+            email: formData.email, 
+            clinic_name: formData.clinic_name,
+            full_address: `${formData.city}${formData.district}${formData.address}`,
+            payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款',
+            invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',
+            invoice_title: formData.invoice_title || '無',
+            tax_id: formData.tax_id || '無',
+            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),
+            magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'),
+            products_list: productsText,         // 自動換行的商品明細
+            gifts_list: giftsText || '無',       // 自動換行的贈品明細
+            subtotal: formData.subtotal,
+            discount_rate: formData.discount_rate + '折',
+            shipping_fee: formData.shipping_fee === 0 ? '免運費' : 'NT$ ' + formData.shipping_fee,
             total: formData.total,
-            payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款'
+            notes: formData.notes || '無'
         };
 
         try {
@@ -1647,10 +1638,8 @@
             console.log("Email sent successfully!");
         } catch (emailError) {
             console.error("Failed to send email:", emailError);
-            // 視需求決定是否阻擋後續流程。通常建議記錄錯誤，但不阻礙訂單建立
         }
 
-        // 接續原有訂單寫入邏輯
         if (window.dataSdk) {
           if (currentOrders.length >= 999) {
             submitBtn.disabled = false;
@@ -1680,7 +1669,6 @@
       submitBtn.textContent = '提交訂單';
     });
 
-    // 根據付款方式動態切換感謝頁文字
     function showSuccessModal(paymentMethod) {
       document.getElementById('successModal').classList.remove('hidden');
       
@@ -1743,17 +1731,12 @@
 
     async function init() {
       initCityDropdown();
-      
-      if (window.elementSdk) {
-        window.elementSdk.init(elementConfig);
-      }
-      
-      if (window.dataSdk) {
-        await window.dataSdk.init(dataHandler);
-      }
+      if (window.elementSdk) window.elementSdk.init(elementConfig);
+      if (window.dataSdk) await window.dataSdk.init(dataHandler);
     }
 
     init();
   </script>
  </body>
 </html>
+
