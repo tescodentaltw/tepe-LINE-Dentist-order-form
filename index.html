@@ -134,23 +134,22 @@
       0%, 100% { box-shadow: 0 0 5px rgba(255, 152, 0, 0.3); }
       50% { box-shadow: 0 0 20px rgba(255, 152, 0, 0.6); }
     }
-  /* 手機版防擠壓設定 */
+    /* 手機版防擠壓設定 (修改版) */
     @media (max-width: 480px) {
-      .product-card > .flex {
+      .product-card .flex.justify-between.items-center {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
       }
-      .product-card > .flex > div:last-child {
-        align-self: flex-end;
+      .product-card .flex.justify-between.items-center > div:last-child {
         width: 100%;
-        display: flex;
         justify-content: flex-end;
-        padding-top: 8px;
         border-top: 1px dashed #e5e7eb;
+        padding-top: 8px;
+        margin-top: 4px;
       }
     }
-</style>
+  </style>
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full bg-gray-50">
@@ -161,12 +160,13 @@
       <img src="https://i.meee.com.tw/4Ojn0aJ.png" alt="TePe Logo" class="h-12 md:h-16" loading="lazy" onerror="this.style.background='#8aced6'; this.alt='TePe';">
      </div>
     </div>
-   </header><main class="w-full max-w-5xl mx-auto px-4 py-6 md:px-8">
+   </header>
+   <main class="w-full px-4 py-6 md:px-8">
     <div class="text-center mb-8">
      <h1 id="formTitle" class="text-2xl md:text-3xl font-bold" style="color: var(--text-color);">醫師群組下單專屬表單</h1>
      <p class="text-gray-600 mt-2">歡迎選購 TePe 優質口腔護理產品</p>
-    </div><div class="discount-banner rounded-2xl p-6 mb-8 text-white shadow-lg">
-     <h2 class="text-xl font-bold mb-4 text-center">🎉 本月優惠方案</h2>
+    </div>
+    <div class="discount-banner rounded-2xl p-6 mb-8 text-white shadow-lg max-w-6xl mx-auto"> <h2 class="text-xl font-bold mb-4 text-center">🎉 本月優惠方案</h2>
      <div class="grid md:grid-cols-3 gap-4 text-center">
       <div class="bg-white/20 rounded-xl p-4">
        <div class="text-2xl font-bold">
@@ -200,12 +200,13 @@
       </div>
      </div>
      <p class="text-center text-sm mt-4 opacity-90">※ 卡裝與袋裝可合併計算，2袋 = 1盒</p>
-    </div><form id="orderForm" class="space-y-8">
-     <section class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2><div class="mb-8">
+    </div>
+    <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> <section class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2>
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">至尊雙層刷毛牙刷</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,960</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-supreme"><img src="https://i.meee.com.tw/GSxGWjd.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/1PyRwDm.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/vjPDWtQ.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/Qu9sHY0.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', 1)">›</button>
        </div>
@@ -244,7 +245,7 @@
       </div><div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（一般刷毛）</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-ibox-reg"><img src="https://i.meee.com.tw/VlWlOXy.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/DIEMgls.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-reg', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-reg', 1)">›</button>
        </div>
@@ -386,7 +387,7 @@
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（一般刷毛）</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-ibag-reg"><img src="https://i.meee.com.tw/eHcqxqs.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/8UfZtfh.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/CnUGgrW.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-reg', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-reg', 1)">›</button>
        </div>
@@ -512,7 +513,7 @@
       </div><div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（超軟刷毛）</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-ibox-soft"><img src="https://i.meee.com.tw/XYjCtqV.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/9pM9GJX.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/eJYmjvb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/rgGnXmK.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-soft', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-soft', 1)">›</button>
        </div>
@@ -615,7 +616,7 @@
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（超軟刷毛）</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-ibag-soft"><img src="https://i.meee.com.tw/JMJrNBN.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/EwKjvM5.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/eJYmjvb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/rgGnXmK.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-soft', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-soft', 1)">›</button>
        </div>
@@ -702,7 +703,7 @@
       </div><div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】L型牙間刷</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-lbox"><img src="https://i.meee.com.tw/rCyJFTu.jpg" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/LRdHbQS.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/iISzmbI.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbox', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbox', 1)">›</button>
        </div>
@@ -805,7 +806,7 @@
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】L型牙間刷</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100" style="height: 300px;">
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
         <div class="carousel-container flex h-full" id="carousel-lbag"><img src="https://i.meee.com.tw/ycY1Rza.jpg" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/CG36pfd.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/iISzmbI.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
         </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbag', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbag', 1)">›</button>
        </div>
@@ -890,7 +891,7 @@
         </div>
        </div>
       </div>
-     </section><section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden">
+     </section><section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🧾 訂單摘要</h2><div id="bagWarning" class="warning-box rounded-xl p-4 mb-4 hidden">
        <div class="flex items-center gap-2">
         <span class="text-2xl">⚠️</span>
@@ -954,7 +955,7 @@
       </div><div class="mt-4 text-center text-sm text-gray-600">
        <span>總盒數（含袋裝換算）：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
       </div>
-     </section><section id="standOptions" class="bg-white rounded-2xl shadow-lg p-6 hidden">
+     </section><section id="standOptions" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🎁 贈品展示架</h2><div id="chairStandOption" class="mb-6 hidden">
        <div class="border-2 border-green-300 rounded-xl p-4 bg-green-50">
         <div class="flex flex-col md:flex-row gap-4 items-center">
@@ -990,7 +991,7 @@
         </div>
        </div>
       </div>
-     </section><section class="bg-white rounded-2xl shadow-lg p-6">
+     </section><section class="bg-white rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📋 客戶資訊</h2><div class="mb-6">
        <label class="block font-semibold mb-3" style="color: var(--text-color);"> 1. 請問您會希望先匯款後發貨，還是您的寄送地址於雙北地區，並希望我們送貨到府收款呢？ <span class="text-red-500">*</span> </label>
        <div class="space-y-3">
@@ -1754,5 +1755,5 @@
 
     init();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d35b8c861ef56fb',t:'MTc3MjAwNjk4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
