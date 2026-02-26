@@ -186,6 +186,9 @@
        <div class="text-xs mt-1">
         再送 2包或1盒
        </div>
+       <div class="text-xs mt-1 font-bold text-yellow-200">
+        並贈送【治療椅專用展示架】
+       </div>
       </div>
       <div class="bg-white/20 rounded-xl p-4">
        <div class="text-2xl font-bold">
@@ -196,6 +199,9 @@
        </div>
        <div class="text-xs mt-1">
         再送 4包或2盒
+       </div>
+       <div class="text-xs mt-1 font-bold text-yellow-200">
+        並贈送【磁吸階梯式展示架】
        </div>
       </div>
      </div>
@@ -964,7 +970,7 @@
          </div>
          <div class="flex-1">
           <div class="font-bold text-lg mb-2" style="color: var(--text-color);">
-           🎉 買滿 3 盒以上贈送【治療椅專用展示架】
+           🎉 買滿 5 盒以上贈送【治療椅專用展示架】
           </div>
           <p class="text-gray-600 mb-4">請問您是否想要這個展示架？</p>
           <div class="flex gap-4">
@@ -981,7 +987,7 @@
          </div>
          <div class="flex-1">
           <div class="font-bold text-lg mb-2" style="color: var(--text-color);">
-           🎉 買滿 5 盒以上贈送【磁吸階梯式展示架】
+           🎉 買滿 10 盒以上贈送【磁吸階梯式展示架】
           </div>
           <p class="text-gray-600 mb-4">請問您是否想要這個展示架？</p>
           <div class="flex gap-4">
@@ -1407,20 +1413,20 @@
           shippingRow.classList.add('hidden');
         }
         
-        if (equivalentBoxes >= 3) {
+        if (equivalentBoxes >= 5) {
           standOptions.classList.remove('hidden');
           document.getElementById('chairStandOption').classList.remove('hidden');
         } else {
           document.getElementById('chairStandOption').classList.add('hidden');
         }
         
-        if (equivalentBoxes >= 5) {
+        if (equivalentBoxes >= 10) {
           document.getElementById('magneticStandOption').classList.remove('hidden');
         } else {
           document.getElementById('magneticStandOption').classList.add('hidden');
         }
         
-        if (equivalentBoxes < 3) {
+        if (equivalentBoxes < 5) {
           standOptions.classList.add('hidden');
         }
         
@@ -1739,5 +1745,6 @@
   </script>
  </body>
 </html>
+
 
 
