@@ -1616,27 +1616,27 @@
       };
       
       try {
-        // 設定傳送給 EmailJS 模板的超完整變數
+// 設定傳送給 EmailJS 模板的超完整變數
         const templateParams = {
-            orderNumber: formData.order_id,
-            doctorName: formData.doctor_name,
-            phone: formData.phone,
-            email: formData.email, 
-            clinicName: formData.clinic_name,
-            fullAddress: `${formData.city}${formData.district}${formData.address}`,
-            paymentMethod: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款',
-            invoiceType: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',
-            invoiceDetails: formData.invoice_title || '無',
-            tax_id: formData.tax_id || '無',
-            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),
-            magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'),
-            productDetails: productsText,         // 自動換行的商品明細
-            gifts_list: giftsText || '無',       // 自動換行的贈品明細
-            subtotal: formData.subtotal,
-            discount: formData.discount_rate + '折',
-            shipping: formData.shipping_fee === 0 ? '免運費' : 'NT$ ' + formData.shipping_fee,
-            finalTotal: formData.total,
-            notes: formData.notes || '無'
+            order_id: formData.order_id,          // 對應模板 {{order_id}}
+            doctor_name: formData.doctor_name,    // 對應模板 {{doctor_name}}
+            phone: formData.phone,                // 對應模板 {{phone}}
+            email: formData.email,                // 對應模板 {{email}}
+            clinic_name: formData.clinic_name,    // 對應模板 {{clinic_name}}
+            full_address: `${formData.city}${formData.district}${formData.address}`, // 對應模板 {{full_address}}
+            payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款', // 對應模板 {{payment_method}}
+            invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',  // 對應模板 {{invoice_type}}
+            invoice_title: formData.invoice_title || '無', // 對應模板 {{invoice_title}}
+            tax_id: formData.tax_id || '無',               // 對應模板 {{tax_id}}
+            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),     // 對應模板 {{chair_stand}}
+            magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'), // 對應模板 {{magnetic_stand}}
+            products_list: productsText,          // 對應模板 {{products_list}} (您原本寫成 productDetails 所以出不來)
+            gifts_list: giftsText || '無',        // 對應模板 {{gifts_list}}
+            subtotal: formData.subtotal,          // 對應模板 {{subtotal}}
+            discount_rate: formData.discount_rate + '折',  // 對應模板 {{discount_rate}}
+            shipping_fee: formData.shipping_fee === 0 ? '免運費' : 'NT$ ' + formData.shipping_fee, // 對應模板 {{shipping_fee}}
+            total: formData.total,                // 對應模板 {{total}} (您原本寫成 finalTotal 所以出不來)
+            notes: formData.notes || '無'         // 對應模板 {{notes}}
         };
 
         try {
