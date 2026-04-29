@@ -134,7 +134,6 @@
       0%, 100% { box-shadow: 0 0 5px rgba(255, 152, 0, 0.3); }
       50% { box-shadow: 0 0 20px rgba(255, 152, 0, 0.6); }
     }
-    /* 手機版防擠壓設定 (修改版) */
     @media (max-width: 480px) {
       .product-card .flex.justify-between.items-center {
         flex-direction: column;
@@ -166,89 +165,102 @@
      <h1 id="formTitle" class="text-2xl md:text-3xl font-bold" style="color: var(--text-color);">醫師群組下單專屬表單</h1>
      <p class="text-gray-600 mt-2">歡迎選購 TePe 優質口腔護理產品</p>
     </div>
-    <div class="discount-banner rounded-2xl p-6 mb-8 text-white shadow-lg max-w-6xl mx-auto"> <h2 class="text-xl font-bold mb-4 text-center">🎉 本月優惠方案</h2>
+    <div class="discount-banner rounded-2xl p-6 mb-8 text-white shadow-lg max-w-6xl mx-auto"> 
+     <h2 class="text-xl font-bold mb-4 text-center">🎉 本月優惠方案</h2>
      <div class="grid md:grid-cols-3 gap-4 text-center">
       <div class="bg-white/20 rounded-xl p-4">
-       <div class="text-2xl font-bold">
-        9折
-       </div>
-       <div class="text-sm">
-        購買 1-4 盒
-       </div>
+       <div class="text-2xl font-bold">9折</div>
+       <div class="text-sm">購買 1-4 盒</div>
       </div>
       <div class="bg-white/20 rounded-xl p-4">
-       <div class="text-2xl font-bold">
-        72折
-       </div>
-       <div class="text-sm">
-        購買 5-9 盒
-       </div>
-       <div class="text-xs mt-1">
-        再送 2包或1盒
-       </div>
-       <div class="text-xs mt-1 font-bold text-yellow-200">
-        並贈送【治療椅專用展示架】
-       </div>
+       <div class="text-2xl font-bold">78折</div>
+       <div class="text-sm">購買 5-9 盒</div>
+       <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【治療椅專用展示架】</div>
       </div>
       <div class="bg-white/20 rounded-xl p-4">
-       <div class="text-2xl font-bold">
-        66折
-       </div>
-       <div class="text-sm">
-        購買 10盒以上
-       </div>
-       <div class="text-xs mt-1">
-        再送 4包或2盒
-       </div>
-       <div class="text-xs mt-1 font-bold text-yellow-200">
-        並贈送【磁吸階梯式展示架】
-       </div>
+       <div class="text-2xl font-bold">6折</div>
+       <div class="text-sm">購買 10盒以上</div>
+       <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【磁吸階梯式展示架】</div>
       </div>
      </div>
      <p class="text-center text-sm mt-4 opacity-90">※ 卡裝與袋裝可合併計算，2袋 = 1盒</p>
     </div>
-    <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> <section class="bg-white rounded-2xl shadow-lg p-6">
+    <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> 
+     <section class="bg-white rounded-2xl shadow-lg p-6">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2>
+      
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">至尊雙層刷毛牙刷</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,960</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">防敏感型牙刷 (牙週病、牙齦敏感適用)</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,750</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-supreme"><img src="https://i.meee.com.tw/GSxGWjd.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/1PyRwDm.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/vjPDWtQ.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/Qu9sHY0.png" alt="至尊雙層刷毛牙刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', 1)">›</button>
+        <div class="carousel-container flex h-full" id="carousel-sensitive">
+         <img src="https://i.meee.com.tw/AsnmMww.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/RtmLEvm.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/uZVx94M.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-sensitive', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-sensitive', 1)">›</button>
        </div>
        <div class="grid md:grid-cols-2 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="supreme-standard" data-price="1960" data-type="box">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="sensitive-brush" data-price="1750" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">
-            至尊雙層刷毛牙刷
-           </div>
-           <div class="text-sm text-gray-500">
-            標準款
-           </div>
+           <div class="font-medium">防敏感型牙刷</div>
+           <div class="text-sm text-gray-500">一盒 14 支</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-standard', -1)">−</button> <span class="w-12 text-center font-bold" id="qty-supreme-standard">0</span> <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-standard', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="supreme-mini" data-price="1960" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium">
-            迷你至尊雙層刷毛牙刷
-           </div>
-           <div class="text-sm text-gray-500">
-            迷你款
-           </div>
-          </div>
-          <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-mini', -1)">−</button> <span class="w-12 text-center font-bold" id="qty-supreme-mini">0</span> <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-mini', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('sensitive-brush', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-sensitive-brush">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('sensitive-brush', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">加護型牙刷 (口腔術後1－2週內適用)</h3>
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
+        <div class="carousel-container flex h-full" id="carousel-special-care">
+         <img src="https://i.meee.com.tw/LdnDO8Q.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/lYwRhEd.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/AKMaSe5.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/glN8adS.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-special-care', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-special-care', 1)">›</button>
+       </div>
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="special-care-red" data-price="2450" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">紅色│一般刷頭│卡裝</div>
+           <div class="text-sm text-gray-500">NT$ 2,450 (14支/盒)</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-red', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-special-care-red">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-red', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="special-care-blue" data-price="3625" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">藍色│纖細刷頭│袋裝</div>
+           <div class="text-sm text-gray-500">NT$ 3,625 (25支/盒)</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-blue', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-special-care-blue">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-blue', 1)">+</button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（一般刷毛）</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
@@ -259,9 +271,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-0" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0號│0.4mm│SSSS
-           </div>
+           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
            <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -272,9 +282,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-1" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -285,9 +293,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-2" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -298,9 +304,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-3" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -311,9 +315,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-4" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -324,9 +326,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-5" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -337,9 +337,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-6" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            6號│1.1mm
-           </div>
+           <div class="font-medium text-sm">6號│1.1mm</div>
            <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -350,9 +348,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-7" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            7號│1.4mm
-           </div>
+           <div class="font-medium text-sm">7號│1.4mm</div>
            <div class="w-4 h-4 rounded-full bg-gray-400 inline-block"></div><span class="text-xs text-gray-500">灰色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -363,9 +359,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-8" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            8號│1.5mm
-           </div>
+           <div class="font-medium text-sm">8號│1.5mm</div>
            <div class="w-4 h-4 rounded-full bg-gray-800 inline-block"></div><span class="text-xs text-gray-500">黑色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -376,12 +370,8 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-mix" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0-5號│0.4-0.8mm
-           </div>
-           <div class="text-xs text-gray-500">
-            🌈 綜合卡裝
-           </div>
+           <div class="font-medium text-sm">0-5號│0.4-0.8mm</div>
+           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
           </div>
           <div class="flex items-center gap-1">
            <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-mix', 1)">+</button>
@@ -389,7 +379,9 @@
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（一般刷毛）</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
@@ -401,9 +393,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-0" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0號│0.4mm│SSSS
-           </div>
+           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
            <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -414,9 +404,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-1" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -427,9 +415,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-2" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -440,9 +426,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-3" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -453,9 +437,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-4" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -466,9 +448,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-5" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -479,9 +459,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-6" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            6號│1.1mm
-           </div>
+           <div class="font-medium text-sm">6號│1.1mm</div>
            <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -492,9 +470,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-7" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            7號│1.4mm
-           </div>
+           <div class="font-medium text-sm">7號│1.4mm</div>
            <div class="w-4 h-4 rounded-full bg-gray-400 inline-block"></div><span class="text-xs text-gray-500">灰色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -505,9 +481,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-8" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            8號│1.5mm
-           </div>
+           <div class="font-medium text-sm">8號│1.5mm</div>
            <div class="w-4 h-4 rounded-full bg-gray-800 inline-block"></div><span class="text-xs text-gray-500">黑色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -516,7 +490,9 @@
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（超軟刷毛）</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
@@ -527,9 +503,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-1" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -540,9 +514,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-2" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -553,9 +525,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-3" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -566,9 +536,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-4" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -579,9 +547,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-5" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -592,9 +558,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-6" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            6號│1.1mm
-           </div>
+           <div class="font-medium text-sm">6號│1.1mm</div>
            <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -605,12 +569,8 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-mix" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1-6號│0.45-1.1mm
-           </div>
-           <div class="text-xs text-gray-500">
-            🌈 綜合卡裝
-           </div>
+           <div class="font-medium text-sm">1-6號│0.45-1.1mm</div>
+           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
           </div>
           <div class="flex items-center gap-1">
            <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-mix', 1)">+</button>
@@ -618,7 +578,9 @@
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（超軟刷毛）</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
@@ -630,9 +592,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-1" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -643,9 +603,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-2" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -656,9 +614,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-3" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -669,9 +625,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-4" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -682,9 +636,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-5" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -695,9 +647,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-6" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            6號│1.1mm
-           </div>
+           <div class="font-medium text-sm">6號│1.1mm</div>
            <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -706,7 +656,9 @@
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】L型牙間刷</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
@@ -717,9 +669,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-0" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0號│0.4mm│SSSS
-           </div>
+           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
            <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -730,9 +680,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-1" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -743,9 +691,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-2" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -756,9 +702,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-3" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -769,9 +713,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-4" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -782,9 +724,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-5" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -795,12 +735,8 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-mix" data-price="1780" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0-5號│0.4-0.8mm
-           </div>
-           <div class="text-xs text-gray-500">
-            🌈 綜合卡裝
-           </div>
+           <div class="font-medium text-sm">0-5號│0.4-0.8mm</div>
+           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
           </div>
           <div class="flex items-center gap-1">
            <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-mix', 1)">+</button>
@@ -808,7 +744,9 @@
          </div>
         </div>
        </div>
-      </div><div class="mb-8">
+      </div>
+
+      <div class="mb-8">
        <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】L型牙間刷</h3>
        <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
        <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
@@ -820,9 +758,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-0" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            0號│0.4mm│SSSS
-           </div>
+           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
            <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -833,9 +769,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-1" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            1號│0.45mm│SSS
-           </div>
+           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
            <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -846,9 +780,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-2" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            2號│0.5mm│SS
-           </div>
+           <div class="font-medium text-sm">2號│0.5mm│SS</div>
            <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -859,9 +791,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-3" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            3號│0.6mm│S
-           </div>
+           <div class="font-medium text-sm">3號│0.6mm│S</div>
            <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -872,9 +802,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-4" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            4號│0.7mm│M
-           </div>
+           <div class="font-medium text-sm">4號│0.7mm│M</div>
            <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -885,9 +813,7 @@
         <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-5" data-price="715" data-type="bag">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">
-            5號│0.8mm│L
-           </div>
+           <div class="font-medium text-sm">5號│0.8mm│L</div>
            <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
           </div>
           <div class="flex items-center gap-1">
@@ -897,51 +823,26 @@
         </div>
        </div>
       </div>
-     </section><section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
-      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🧾 訂單摘要</h2><div id="bagWarning" class="warning-box rounded-xl p-4 mb-4 hidden">
+     </section>
+     
+     <section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
+      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🧾 訂單摘要</h2>
+      <div id="bagWarning" class="warning-box rounded-xl p-4 mb-4 hidden">
        <div class="flex items-center gap-2">
         <span class="text-2xl">⚠️</span>
         <div>
-         <div class="font-bold text-orange-800">
-          袋裝數量需為 2 的倍數
-         </div>
-         <div class="text-sm text-orange-700">
-          目前袋裝總數量為奇數，請調整數量後才能提交訂單
-         </div>
+         <div class="font-bold text-orange-800">袋裝數量需為 2 的倍數</div>
+         <div class="text-sm text-orange-700">目前袋裝總數量為奇數，請調整數量後才能提交訂單</div>
         </div>
        </div>
-      </div><div id="allProductsSection" class="mb-6">
-       <h3 class="font-semibold mb-3 pb-2 border-b" style="color: var(--text-color);">📦 全部產品（小計）</h3>
-       <div id="allProductsList" class="space-y-2 mb-3"></div>
-       <div class="bg-gray-100 rounded-lg p-3">
-        <div class="flex justify-between font-semibold" style="color: var(--text-color);"><span>全部產品小計：</span> <span id="allProductsSubtotal">NT$ 0</span>
-        </div>
-       </div>
-      </div><div id="paidProductsSection" class="mb-6">
-       <h3 class="font-semibold mb-3 pb-2 border-b" style="color: var(--text-color);">💳 要付費產品</h3>
+      </div>
+      
+      <div id="paidProductsSection" class="mb-6">
+       <h3 class="font-semibold mb-3 pb-2 border-b" style="color: var(--text-color);">📦 全部產品明細</h3>
        <div id="paidProductsList" class="space-y-2 mb-3"></div>
-       <div class="bg-gray-100 rounded-lg p-3">
-        <div class="flex justify-between font-semibold" style="color: var(--text-color);"><span>要付費小計：</span> <span id="paidProductsSubtotal">NT$ 0</span>
-        </div>
-       </div>
-      </div><div id="giftProductsSection" class="mb-6 hidden">
-       <h3 class="font-semibold mb-3 pb-2 border-b text-green-600">🎁 贈品區域</h3>
-       <div id="giftProductsList" class="space-y-2 mb-3"></div>
-       <div class="bg-green-100 rounded-lg p-3">
-        <div class="flex justify-between font-semibold text-green-700"><span>贈品小計：</span> <span id="giftProductsSubtotal">NT$ 0</span>
-        </div>
-       </div>
-      </div><div id="giftReminder" class="gift-reminder rounded-xl p-4 mb-4 hidden">
-       <div class="flex items-center gap-2">
-        <span class="text-2xl">🎁</span>
-        <div>
-         <div class="font-bold text-green-800">
-          您還可以選擇贈品！
-         </div>
-         <div class="text-sm text-green-700" id="giftReminderText"></div>
-        </div>
-       </div>
-      </div><div class="bg-gray-50 rounded-xl p-4 border-t pt-6">
+      </div>
+      
+      <div class="bg-gray-50 rounded-xl p-4 border-t pt-6">
        <div class="space-y-2">
         <div class="flex justify-between">
          <span>商品小計</span> <span id="subtotalDisplay">NT$ 0</span>
@@ -958,11 +859,15 @@
          </div>
         </div>
        </div>
-      </div><div class="mt-4 text-center text-sm text-gray-600">
+      </div>
+      <div class="mt-4 text-center text-sm text-gray-600">
        <span>總盒數（含袋裝換算）：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
       </div>
-     </section><section id="standOptions" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
-      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🎁 贈品展示架</h2><div id="chairStandOption" class="mb-6 hidden">
+     </section>
+     
+     <section id="standOptions" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
+      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🎁 贈品展示架</h2>
+      <div id="chairStandOption" class="mb-6 hidden">
        <div class="border-2 border-green-300 rounded-xl p-4 bg-green-50">
         <div class="flex flex-col md:flex-row gap-4 items-center">
          <div class="w-full md:w-1/3">
@@ -979,7 +884,8 @@
          </div>
         </div>
        </div>
-      </div><div id="magneticStandOption" class="hidden">
+      </div>
+      <div id="magneticStandOption" class="hidden">
        <div class="border-2 border-blue-300 rounded-xl p-4 bg-blue-50">
         <div class="flex flex-col md:flex-row gap-4 items-center">
          <div class="w-full md:w-1/3">
@@ -997,25 +903,28 @@
         </div>
        </div>
       </div>
-     </section><section class="bg-white rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
-      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📋 客戶資訊</h2><div class="mb-6">
+     </section>
+     
+     <section class="bg-white rounded-2xl shadow-lg p-6 max-w-6xl mx-auto">
+      <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📋 客戶資訊</h2>
+      <div class="mb-6">
        <label class="block font-semibold mb-3" style="color: var(--text-color);"> 1. 請問您會希望先匯款後發貨，還是您的寄送地址於雙北地區，並希望我們送貨到府收款呢？ <span class="text-red-500">*</span> </label>
        <div class="space-y-3">
         <label class="radio-label flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer hover:border-blue-300"> <input type="radio" name="paymentMethod" value="transfer" class="w-5 h-5 mt-1" required>
          <div>
-          <div class="font-medium">
-           先匯款後發貨
-          </div>
+          <div class="font-medium">先匯款後發貨</div>
           <div class="promo-highlight rounded-lg p-3 mt-2">
            <span class="text-orange-700 font-bold">🎁 若選擇此付款方式將會再加贈 I型牙間刷（超軟刷毛）綜合8支袋裝！</span>
           </div>
-         </div></label> <label class="radio-label flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer hover:border-blue-300"> <input type="radio" name="paymentMethod" value="cod" class="w-5 h-5 mt-1">
+         </div>
+        </label> 
+        <label class="radio-label flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer hover:border-blue-300"> <input type="radio" name="paymentMethod" value="cod" class="w-5 h-5 mt-1">
          <div>
-          <div class="font-medium">
-           我的地址在雙北地區，並希望貨到付款
-          </div>
-         </div></label>
-       </div><div id="bankInfo" class="mt-4 bg-blue-50 border-2 border-blue-200 rounded-xl p-4 hidden">
+          <div class="font-medium">我的地址在雙北地區，並希望貨到付款</div>
+         </div>
+        </label>
+       </div>
+       <div id="bankInfo" class="mt-4 bg-blue-50 border-2 border-blue-200 rounded-xl p-4 hidden">
         <h4 class="font-bold mb-2" style="color: var(--text-color);">💳 匯款帳戶資訊</h4>
         <div class="space-y-1 text-sm">
          <p><span class="font-medium">戶名：</span>香港商豐達牙材有限公司台灣分公司</p>
@@ -1023,9 +932,11 @@
          <p><span class="font-medium">帳號：</span><span class="font-bold text-lg" style="color: var(--text-color);">001-591031-031</span>（共12碼）</p>
         </div>
        </div>
-      </div><div class="mb-4">
+      </div>
+      <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 2. 醫師姓名 <span class="text-red-500">*</span> </label> <input type="text" id="doctorName" required class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入醫師姓名">
-      </div><div class="mb-4">
+      </div>
+      <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 3. 聯絡電話 <span class="text-red-500">*</span> </label> <input type="tel" id="phone" required class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入聯絡電話">
       </div>
       <div class="mb-4">
@@ -1034,16 +945,19 @@
       </div>
       <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 4. 醫療院所名稱 <span class="text-red-500">*</span> </label> <input type="text" id="clinicName" required class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入醫療院所名稱">
-      </div><div class="mb-4">
+      </div>
+      <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 5. 寄送地址 <span class="text-red-500">*</span> </label>
        <div class="grid md:grid-cols-2 gap-3 mb-3">
         <select id="city" required class="px-4 py-3 border-2 rounded-xl focus:border-blue-400"> <option value="">請選擇縣市</option> </select> <select id="district" required class="px-4 py-3 border-2 rounded-xl focus:border-blue-400" disabled> <option value="">請先選擇縣市</option> </select>
        </div><input type="text" id="address" required class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入詳細地址（路、巷、弄、號、樓）">
-      </div><div class="mb-4">
+      </div>
+      <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 6. 發票形式 <span class="text-red-500">*</span> </label>
        <div class="flex gap-4">
         <label class="radio-label flex items-center gap-2 px-4 py-3 border-2 rounded-xl cursor-pointer"> <input type="radio" name="invoiceType" value="duplicate" required class="w-4 h-4"> <span>發票二聯</span> </label> <label class="radio-label flex items-center gap-2 px-4 py-3 border-2 rounded-xl cursor-pointer"> <input type="radio" name="invoiceType" value="triplicate" class="w-4 h-4"> <span>發票三聯（需打統編）</span> </label>
-       </div><div id="triplicateFields" class="mt-4 space-y-3 hidden">
+       </div>
+       <div id="triplicateFields" class="mt-4 space-y-3 hidden">
         <div>
          <label class="block font-medium mb-2 text-gray-700">三聯發票抬頭 <span class="text-red-500">*</span></label> <input type="text" id="invoiceTitle" class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入發票抬頭">
         </div>
@@ -1051,10 +965,13 @@
          <label class="block font-medium mb-2 text-gray-700">三聯發票統編 <span class="text-red-500">*</span></label> <input type="text" id="taxId" class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="請輸入統一編號" maxlength="8">
         </div>
        </div>
-      </div><div class="mb-4">
+      </div>
+      <div class="mb-4">
        <label class="block font-semibold mb-2" style="color: var(--text-color);"> 備註（選填） </label> <textarea id="notes" rows="3" class="w-full px-4 py-3 border-2 rounded-xl focus:border-blue-400" placeholder="如有其他需求或備註事項，請在此填寫"></textarea>
       </div>
-     </section><div class="text-center">
+     </section>
+     
+     <div class="text-center">
       <button type="submit" id="submitBtn" class="submit-btn text-white px-12 py-4 rounded-xl text-lg font-bold shadow-lg disabled:opacity-50" disabled> 提交訂單 </button>
       <p id="submitError" class="text-red-500 mt-2 hidden"></p>
      </div>
@@ -1062,7 +979,6 @@
     
     <div id="successModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden p-4">
      <div class="bg-white rounded-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl relative">
-      
       <button onclick="closeSuccessModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 z-10 hidden md:block text-2xl font-bold">&times;</button>
       
       <div class="w-full md:w-1/3 p-8 md:p-10 flex flex-col justify-center bg-gray-50 border-r">
@@ -1093,14 +1009,17 @@
       </div>
      </div>
     </div>
-   </main><footer class="bg-white border-t mt-8 py-6">
+   </main>
+   
+   <footer class="bg-white border-t mt-8 py-6">
     <div class="w-full px-4 text-center text-gray-600">
      <p>© 2024 TePe Taiwan. All rights reserved.</p>
      <p class="text-sm mt-2">如有任何問題，歡迎與我們聯繫</p>
     </div>
    </footer>
   </div>
- <script>
+  
+  <script>
     // Taiwan cities and districts
     const taiwanData = {
       "台北市": ["中正區", "大同區", "中山區", "松山區", "大安區", "萬華區", "信義區", "士林區", "北投區", "內湖區", "南港區", "文山區"],
@@ -1129,8 +1048,9 @@
 
     // Product names
     const productNames = {
-      'supreme-standard': '至尊雙層刷毛牙刷 - 標準款',
-      'supreme-mini': '迷你至尊雙層刷毛牙刷',
+      'sensitive-brush': '【卡裝】防敏感型牙刷',
+      'special-care-red': '【卡裝】加護型牙刷 (紅色│一般刷頭)',
+      'special-care-blue': '【卡裝計】加護型牙刷 (藍色│纖細刷頭│袋裝)',
       'ibox-reg-0': '【卡裝】I型牙間刷(一般) 0號',
       'ibox-reg-1': '【卡裝】I型牙間刷(一般) 1號',
       'ibox-reg-2': '【卡裝】I型牙間刷(一般) 2號',
@@ -1225,7 +1145,7 @@
       calculateTotal();
     }
 
-    // Calculate total with complex gift allocation logic
+    // Calculate total 
     function calculateTotal() {
       let boxCount = 0;
       let bagCount = 0;
@@ -1271,63 +1191,17 @@
       if (equivalentBoxes >= 1 && equivalentBoxes <= 4) {
         discountRate = 0.9;
       } else if (equivalentBoxes >= 5 && equivalentBoxes <= 9) {
-        discountRate = 0.72;
+        discountRate = 0.78;
       } else if (equivalentBoxes >= 10) {
-        discountRate = 0.66;
+        discountRate = 0.6;
       }
       
-      // Gift allocation logic
       let paidProducts = JSON.parse(JSON.stringify(selectedProducts));
-      let giftsData = [];
       let paidTotal = subtotal;
-      
-      // Determine gift thresholds
-      let giftThreshold = 0;
-      let maxGiftEquivalentBoxes = 0;
-      
-      if (equivalentBoxes >= 5 && equivalentBoxes <= 9) {
-        giftThreshold = 5;
-        maxGiftEquivalentBoxes = 1;
-      } else if (equivalentBoxes >= 10) {
-        giftThreshold = 10;
-        maxGiftEquivalentBoxes = 2;
-      }
-      
-      // Calculate auto-allocated gifts
-      let autoGiftEquivalentBoxes = 0;
-      
-      if (equivalentBoxes > giftThreshold && giftThreshold > 0) {
-        autoGiftEquivalentBoxes = Math.min(equivalentBoxes - giftThreshold, maxGiftEquivalentBoxes);
-      }
-      
-      // Allocate gifts from cheapest products
-      if (autoGiftEquivalentBoxes > 0) {
-        giftsData = allocateGiftsFromCheapest(paidProducts, autoGiftEquivalentBoxes);
-        
-        // Update paid products by removing gifted quantities
-        giftsData.forEach(gift => {
-          const paidProduct = paidProducts.find(p => p.id === gift.id);
-          if (paidProduct) {
-            paidProduct.qty -= gift.qty;
-            if (paidProduct.qty < 0) paidProduct.qty = 0;
-          }
-        });
-        
-        paidProducts = paidProducts.filter(p => p.qty > 0);
-        paidTotal = paidProducts.reduce((sum, p) => sum + (p.price * p.qty), 0);
-      }
       
       // 儲存當前購物車明細，供 Email 使用
       currentCart.paid = paidProducts;
-      currentCart.gifts = giftsData;
-      
-      let optionalGiftEquivalentBoxes = 0;
-      let hasOptionalGifts = false;
-      
-      if (equivalentBoxes === giftThreshold && giftThreshold > 0) {
-        optionalGiftEquivalentBoxes = maxGiftEquivalentBoxes;
-        hasOptionalGifts = true;
-      }
+      currentCart.gifts = [];
       
       const orderSummary = document.getElementById('orderSummary');
       const standOptions = document.getElementById('standOptions');
@@ -1335,21 +1209,7 @@
       if (selectedProducts.length > 0) {
         orderSummary.classList.remove('hidden');
         
-        // Part 1: All Products
-        const allProductsList = document.getElementById('allProductsList');
-        const allProductsSubtotal = document.getElementById('allProductsSubtotal');
-        allProductsList.innerHTML = selectedProducts.map(p => `
-          <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-            <div class="flex-1">
-              <div class="font-medium text-sm">${p.name}</div>
-              <div class="text-xs text-gray-500">NT$ ${p.price.toLocaleString()} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}</div>
-            </div>
-            <div class="text-right font-bold" style="color: var(--text-color);">NT$ ${(p.price * p.qty).toLocaleString()}</div>
-          </div>
-        `).join('');
-        allProductsSubtotal.textContent = `NT$ ${subtotal.toLocaleString()}`;
-        
-        // Part 2: Paid Products
+        // Paid Products (All selected products)
         const paidProductsList = document.getElementById('paidProductsList');
         paidProductsList.innerHTML = paidProducts.map(p => `
           <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
@@ -1360,41 +1220,6 @@
             <div class="text-right font-bold" style="color: var(--text-color);">NT$ ${(p.price * p.qty).toLocaleString()}</div>
           </div>
         `).join('');
-        document.getElementById('paidProductsSubtotal').textContent = `NT$ ${paidTotal.toLocaleString()}`;
-        
-        // Part 3: Gift Products
-        const giftProductsSection = document.getElementById('giftProductsSection');
-        if (giftsData.length > 0) {
-          giftProductsSection.classList.remove('hidden');
-          const giftProductsList = document.getElementById('giftProductsList');
-          giftProductsList.innerHTML = giftsData.map(p => `
-            <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-              <div class="flex-1">
-                <div class="font-medium text-sm">${p.name} <span class="gift-badge text-white text-xs px-2 py-1 rounded-full ml-2">🎁 贈品</span></div>
-                <div class="text-xs text-gray-500">NT$ ${p.price.toLocaleString()} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}</div>
-              </div>
-              <div class="text-right font-bold text-green-600">NT$ 0</div>
-            </div>
-          `).join('');
-          document.getElementById('giftProductsSubtotal').textContent = `NT$ 0`;
-        } else {
-          giftProductsSection.classList.add('hidden');
-        }
-        
-        // Gift reminder
-        const giftReminder = document.getElementById('giftReminder');
-        const giftReminderText = document.getElementById('giftReminderText');
-        
-        if (hasOptionalGifts) {
-          giftReminder.classList.remove('hidden');
-          if (optionalGiftEquivalentBoxes === 1) {
-            giftReminderText.textContent = `您還可以選擇 2 袋或 1 盒作為贈品！`;
-          } else if (optionalGiftEquivalentBoxes === 2) {
-            giftReminderText.textContent = `您還可以選擇 4 袋或 2 盒作為贈品！`;
-          }
-        } else {
-          giftReminder.classList.add('hidden');
-        }
         
         const discountedSubtotal = Math.round(paidTotal * discountRate);
         const shippingFee = discountedSubtotal < 3000 && discountedSubtotal > 0 ? 120 : 0;
@@ -1436,47 +1261,6 @@
       }
       
       updateSubmitButton(isBagCountValid && selectedProducts.length > 0);
-    }
-
-    // Allocate gifts from cheapest products
-    function allocateGiftsFromCheapest(products, equivalentBoxesToAllocate) {
-      const gifts = [];
-      let remainingEquivalentBoxes = equivalentBoxesToAllocate;
-      
-      const sortedProducts = [...products].sort((a, b) => {
-        if (a.price !== b.price) return a.price - b.price;
-        if (a.type === 'bag' && b.type === 'box') return -1;
-        if (a.type === 'box' && b.type === 'bag') return 1;
-        return 0;
-      });
-      
-      for (const product of sortedProducts) {
-        if (remainingEquivalentBoxes <= 0) break;
-        
-        const productEquivalentBoxes = product.type === 'bag' 
-          ? Math.ceil(product.qty / 2) 
-          : product.qty;
-        
-        if (productEquivalentBoxes >= remainingEquivalentBoxes) {
-          let giftQty = remainingEquivalentBoxes;
-          
-          if (product.type === 'bag') {
-            giftQty = Math.min(remainingEquivalentBoxes * 2, product.qty);
-            giftQty = Math.floor(giftQty / 2) * 2;
-          }
-          
-          gifts.push({
-            id: product.id, name: product.name, price: product.price, qty: giftQty, type: product.type
-          });
-          remainingEquivalentBoxes -= (product.type === 'bag' ? Math.floor(giftQty / 2) : giftQty);
-        } else {
-          gifts.push({
-            id: product.id, name: product.name, price: product.price, qty: product.qty, type: product.type
-          });
-          remainingEquivalentBoxes -= productEquivalentBoxes;
-        }
-      }
-      return gifts;
     }
 
     function updateSubmitButton(productsValid) {
@@ -1616,27 +1400,26 @@
       };
       
       try {
-// 設定傳送給 EmailJS 模板的超完整變數
         const templateParams = {
-            order_id: formData.order_id,          // 對應模板 {{order_id}}
-            doctor_name: formData.doctor_name,    // 對應模板 {{doctor_name}}
-            phone: formData.phone,                // 對應模板 {{phone}}
-            email: formData.email,                // 對應模板 {{email}}
-            clinic_name: formData.clinic_name,    // 對應模板 {{clinic_name}}
-            full_address: `${formData.city}${formData.district}${formData.address}`, // 對應模板 {{full_address}}
-            payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款', // 對應模板 {{payment_method}}
-            invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',  // 對應模板 {{invoice_type}}
-            invoice_title: formData.invoice_title || '無', // 對應模板 {{invoice_title}}
-            tax_id: formData.tax_id || '無',               // 對應模板 {{tax_id}}
-            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),     // 對應模板 {{chair_stand}}
-            magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'), // 對應模板 {{magnetic_stand}}
-            products_list: productsText,          // 對應模板 {{products_list}} (您原本寫成 productDetails 所以出不來)
-            gifts_list: giftsText || '無',        // 對應模板 {{gifts_list}}
-            subtotal: formData.subtotal,          // 對應模板 {{subtotal}}
-            discount_rate: formData.discount_rate + '折',  // 對應模板 {{discount_rate}}
-            shipping_fee: formData.shipping_fee === 0 ? '免運費' : 'NT$ ' + formData.shipping_fee, // 對應模板 {{shipping_fee}}
-            total: formData.total,                // 對應模板 {{total}} (您原本寫成 finalTotal 所以出不來)
-            notes: formData.notes || '無'         // 對應模板 {{notes}}
+            order_id: formData.order_id,          
+            doctor_name: formData.doctor_name,    
+            phone: formData.phone,                
+            email: formData.email,                
+            clinic_name: formData.clinic_name,    
+            full_address: `${formData.city}${formData.district}${formData.address}`, 
+            payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款', 
+            invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',  
+            invoice_title: formData.invoice_title || '無', 
+            tax_id: formData.tax_id || '無',               
+            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),      
+            magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'), 
+            products_list: productsText,          
+            gifts_list: giftsText || '無',        
+            subtotal: formData.subtotal,          
+            discount_rate: formData.discount_rate + '折',  
+            shipping_fee: formData.shipping_fee === 0 ? '免運費' : 'NT$ ' + formData.shipping_fee, 
+            total: formData.total,                
+            notes: formData.notes || '無'         
         };
 
         try {
@@ -1745,6 +1528,3 @@
   </script>
  </body>
 </html>
-
-
-
