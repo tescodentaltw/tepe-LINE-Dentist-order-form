@@ -165,16 +165,17 @@
      <h1 id="formTitle" class="text-2xl md:text-3xl font-bold" style="color: var(--text-color);">醫師群組下單專屬表單</h1>
      <p class="text-gray-600 mt-2">歡迎選購 TePe 優質口腔護理產品</p>
     </div>
+    
     <div class="discount-banner rounded-2xl p-6 mb-8 text-white shadow-lg max-w-6xl mx-auto"> 
      <h2 class="text-xl font-bold mb-4 text-center">🎉 本月優惠方案</h2>
      <div class="grid md:grid-cols-3 gap-4 text-center">
       <div class="bg-white/20 rounded-xl p-4">
        <div class="text-2xl font-bold">9折</div>
-       <div class="text-sm">購買 1-4 盒</div>
+       <div class="text-sm">購買 1-2 盒</div>
       </div>
       <div class="bg-white/20 rounded-xl p-4">
-       <div class="text-2xl font-bold">78折</div>
-       <div class="text-sm">購買 5-9 盒</div>
+       <div class="text-2xl font-bold">7折</div>
+       <div class="text-sm">購買 3-9 盒</div>
        <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【治療椅專用展示架】</div>
       </div>
       <div class="bg-white/20 rounded-xl p-4">
@@ -183,35 +184,36 @@
        <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【磁吸階梯式展示架】</div>
       </div>
      </div>
-     <p class="text-center text-sm mt-4 opacity-90">※ 卡裝與袋裝可合併計算，2袋 = 1盒</p>
+     <p class="text-center text-sm mt-4 opacity-90">※ 卡裝與袋裝可合併計算，全館品項均享折扣（2袋 = 1盒）</p>
     </div>
+    
     <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> 
      <section class="bg-white rounded-2xl shadow-lg p-6">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2>
       
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">防敏感型牙刷 (牙週病、牙齦敏感適用)</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,750</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙護理牙刷 (All-On-4適用)</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 2,380</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-sensitive">
-         <img src="https://i.meee.com.tw/AsnmMww.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/RtmLEvm.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/uZVx94M.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-implant-care">
+         <img src="https://i.meee.com.tw/jC5KAVI.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/R1wKUI9.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/xxfoK1g.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-sensitive', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-sensitive', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-care', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-care', 1)">›</button>
        </div>
        <div class="grid md:grid-cols-2 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="sensitive-brush" data-price="1750" data-type="box">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="implant-care" data-price="2380" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">防敏感型牙刷</div>
-           <div class="text-sm text-gray-500">一盒 14 支</div>
+           <div class="font-medium">植牙護理牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('sensitive-brush', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-sensitive-brush">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('sensitive-brush', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-care', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-implant-care">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-care', 1)">+</button>
           </div>
          </div>
         </div>
@@ -219,41 +221,28 @@
       </div>
 
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">加護型牙刷 (口腔術後1－2週內適用)</h3>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙/矯正專用牙刷</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,750</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-special-care">
-         <img src="https://i.meee.com.tw/LdnDO8Q.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/lYwRhEd.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/AKMaSe5.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/glN8adS.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-implant-ortho">
+         <img src="https://i.meee.com.tw/dr4F2v7.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/tlCcaNT.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/tiCWwdO.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-special-care', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-special-care', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-ortho', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-ortho', 1)">›</button>
        </div>
        <div class="grid md:grid-cols-2 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="special-care-red" data-price="2450" data-type="box">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="implant-ortho" data-price="1750" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">紅色│一般刷頭│卡裝</div>
-           <div class="font-bold text-red-500">NT$ 2,450 (14支/盒)</div>
+           <div class="font-medium">植牙/矯正專用牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-red', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-special-care-red">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-red', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="special-care-blue" data-price="3625" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium">藍色│纖細刷頭│袋裝</div>
-           <div class="font-bold text-red-500">NT$ 3,625 (25支/盒)</div>
-          </div>
-          <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-blue', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-special-care-blue">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('special-care-blue', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-ortho', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-implant-ortho">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-ortho', 1)">+</button>
           </div>
          </div>
         </div>
@@ -875,7 +864,7 @@
          </div>
          <div class="flex-1">
           <div class="font-bold text-lg mb-2" style="color: var(--text-color);">
-           🎉 買滿 5 盒以上贈送【治療椅專用展示架】
+           🎉 買滿 3 盒以上贈送【治療椅專用展示架】
           </div>
           <p class="text-gray-600 mb-4">請問您是否想要這個展示架？</p>
           <div class="flex gap-4">
@@ -1048,9 +1037,8 @@
 
     // Product names
     const productNames = {
-      'sensitive-brush': '【卡裝】防敏感型牙刷',
-      'special-care-red': '【卡裝】加護型牙刷 (紅色│一般刷頭)',
-      'special-care-blue': '【卡裝計】加護型牙刷 (藍色│纖細刷頭│袋裝)',
+      'implant-care': '【卡裝】植牙護理牙刷 (All-On-4適用)',
+      'implant-ortho': '【卡裝】植牙/矯正專用牙刷',
       'ibox-reg-0': '【卡裝】I型牙間刷(一般) 0號',
       'ibox-reg-1': '【卡裝】I型牙間刷(一般) 1號',
       'ibox-reg-2': '【卡裝】I型牙間刷(一般) 2號',
@@ -1188,10 +1176,10 @@
       // Discount rate determination
       let discountRate = 1;
       
-      if (equivalentBoxes >= 1 && equivalentBoxes <= 4) {
+      if (equivalentBoxes >= 1 && equivalentBoxes <= 2) {
         discountRate = 0.9;
-      } else if (equivalentBoxes >= 5 && equivalentBoxes <= 9) {
-        discountRate = 0.78;
+      } else if (equivalentBoxes >= 3 && equivalentBoxes <= 9) {
+        discountRate = 0.7;
       } else if (equivalentBoxes >= 10) {
         discountRate = 0.6;
       }
@@ -1238,20 +1226,22 @@
           shippingRow.classList.add('hidden');
         }
         
-        if (equivalentBoxes >= 5) {
+        // Chair Stand Threshold logic update (3 boxes)
+        if (equivalentBoxes >= 3) {
           standOptions.classList.remove('hidden');
           document.getElementById('chairStandOption').classList.remove('hidden');
         } else {
           document.getElementById('chairStandOption').classList.add('hidden');
         }
         
+        // Magnetic Stand logic update (10 boxes)
         if (equivalentBoxes >= 10) {
           document.getElementById('magneticStandOption').classList.remove('hidden');
         } else {
           document.getElementById('magneticStandOption').classList.add('hidden');
         }
         
-        if (equivalentBoxes < 5) {
+        if (equivalentBoxes < 3) {
           standOptions.classList.add('hidden');
         }
         
