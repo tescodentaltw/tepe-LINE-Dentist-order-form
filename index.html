@@ -184,647 +184,137 @@
        <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【磁吸階梯式展示架】</div>
       </div>
      </div>
-     <p class="text-center text-sm mt-4 opacity-90">※ 卡裝與袋裝可合併計算，全館品項均享折扣（2袋 = 1盒）</p>
+     <p class="text-center text-sm mt-4 opacity-90">※ 全館品項均享折扣</p>
     </div>
     
     <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> 
      <section class="bg-white rounded-2xl shadow-lg p-6">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2>
       
+      <!-- 單頭刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙護理牙刷 (All-On-4適用)</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 2,380</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">單頭刷</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,960</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-implant-care">
-         <img src="https://i.meee.com.tw/jC5KAVI.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/R1wKUI9.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/xxfoK1g.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-single-tuft">
+         <img src="https://i.meee.com.tw/AEoZObj.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/W13dEix.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/bDxrd3H.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-care', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-care', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-single-tuft', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-single-tuft', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="implant-care" data-price="2380" data-type="box">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="single-tuft" data-price="1960">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">植牙護理牙刷</div>
-           <div class="text-sm text-gray-500">卡裝</div>
+           <div class="font-medium">單頭刷</div>
+           <div class="text-sm text-gray-500">卡裝 (1盒14支)</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-care', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-implant-care">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-care', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('single-tuft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-single-tuft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('single-tuft', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
+      <!-- 間隙專用牙刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙/矯正專用牙刷</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,750</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">間隙專用牙刷</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 3,920</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-implant-ortho">
-         <img src="https://i.meee.com.tw/dr4F2v7.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/tlCcaNT.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/tiCWwdO.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-interspace">
+         <img src="https://i.meee.com.tw/my4WlLC.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/nyAzEfb.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/9haERE7.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-ortho', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-implant-ortho', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-interspace', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-interspace', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="implant-ortho" data-price="1750" data-type="box">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="interspace" data-price="3920">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">植牙/矯正專用牙刷</div>
-           <div class="text-sm text-gray-500">卡裝</div>
+           <div class="font-medium">間隙專用牙刷</div>
+           <div class="text-sm text-gray-500">卡裝 (1盒14支)</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-ortho', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-implant-ortho">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('implant-ortho', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('interspace', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-interspace">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('interspace', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
+      <!-- 膨脹牙線 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（一般刷毛）</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">膨脹牙線</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 2,500</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-ibox-reg"><img src="https://i.meee.com.tw/VlWlOXy.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/DIEMgls.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-reg', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-reg', 1)">›</button>
+        <div class="carousel-container flex h-full" id="carousel-floss-expanding">
+         <img src="https://i.meee.com.tw/A4NnZdr.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/nhfjPAH.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/RANldg5.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-expanding', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-expanding', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-0" data-price="1780" data-type="box">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="floss-expanding" data-price="2500">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
-           <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
+           <div class="font-medium">膨脹牙線</div>
+           <div class="text-sm text-gray-500">卡裝 (1盒10卡)</div>
           </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-0', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-0">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-0', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-1" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-1', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-1', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-2" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-2', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-2', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-3" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-3', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-3', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-4" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-4', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-4', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-5" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-5', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-5', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-6" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">6號│1.1mm</div>
-           <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-6', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-6">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-6', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-7" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">7號│1.4mm</div>
-           <div class="w-4 h-4 rounded-full bg-gray-400 inline-block"></div><span class="text-xs text-gray-500">灰色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-7', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-7">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-7', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-8" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">8號│1.5mm</div>
-           <div class="w-4 h-4 rounded-full bg-gray-800 inline-block"></div><span class="text-xs text-gray-500">黑色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-8', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-8">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-8', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-reg-mix" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">0-5號│0.4-0.8mm</div>
-           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-reg-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-reg-mix', 1)">+</button>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-expanding', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-floss-expanding">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-expanding', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
+      <!-- 植牙專用牙線 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（一般刷毛）</h3>
-       <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
-       <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙專用牙線</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 4,000</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-ibag-reg"><img src="https://i.meee.com.tw/eHcqxqs.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/8UfZtfh.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/CnUGgrW.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-reg', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-reg', 1)">›</button>
+        <div class="carousel-container flex h-full" id="carousel-floss-implant">
+         <img src="https://i.meee.com.tw/hFV1H8u.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/0HDZgRG.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/ebIMp0W.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-implant', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-implant', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-0" data-price="715" data-type="bag">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="floss-implant" data-price="4000">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
-           <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
+           <div class="font-medium">植牙專用牙線</div>
+           <div class="text-sm text-gray-500">卡裝 (1盒10卡)</div>
           </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-0', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-0">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-0', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-1" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-1', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-1', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-2" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-2', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-2', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-3" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-3', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-3', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-4" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-4', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-4', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-5" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-5', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-5', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-6" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">6號│1.1mm</div>
-           <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-6', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-6">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-6', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-7" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">7號│1.4mm</div>
-           <div class="w-4 h-4 rounded-full bg-gray-400 inline-block"></div><span class="text-xs text-gray-500">灰色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-7', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-7">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-7', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-reg-8" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">8號│1.5mm</div>
-           <div class="w-4 h-4 rounded-full bg-gray-800 inline-block"></div><span class="text-xs text-gray-500">黑色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-8', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-reg-8">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-reg-8', 2)">+</button>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-implant', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-floss-implant">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-implant', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
-      <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】I型牙間刷（超軟刷毛）</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-ibox-soft"><img src="https://i.meee.com.tw/XYjCtqV.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/9pM9GJX.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/eJYmjvb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/rgGnXmK.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-soft', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibox-soft', 1)">›</button>
-       </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-1" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-1', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-1', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-2" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-2', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-2', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-3" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-3', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-3', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-4" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-4', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-4', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-5" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-5', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-5', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-6" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">6號│1.1mm</div>
-           <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-6', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-6">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-6', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibox-soft-mix" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1-6號│0.45-1.1mm</div>
-           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibox-soft-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibox-soft-mix', 1)">+</button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】I型牙間刷（超軟刷毛）</h3>
-       <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
-       <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-ibag-soft"><img src="https://i.meee.com.tw/JMJrNBN.jpg" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/EwKjvM5.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/eJYmjvb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/rgGnXmK.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="I型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-soft', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-ibag-soft', 1)">›</button>
-       </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-1" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-1', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-1', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-2" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-2', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-2', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-3" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-3', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-3', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-4" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-4', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-4', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-5" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-5', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-5', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="ibag-soft-6" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">6號│1.1mm</div>
-           <div class="w-4 h-4 rounded-full bg-purple-500 inline-block"></div><span class="text-xs text-gray-500">紫色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-6', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-ibag-soft-6">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('ibag-soft-6', 2)">+</button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【卡裝】L型牙間刷</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,780</span></p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-lbox"><img src="https://i.meee.com.tw/rCyJFTu.jpg" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/LRdHbQS.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/iISzmbI.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbox', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbox', 1)">›</button>
-       </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-0" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
-           <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-0', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-0">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-0', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-1" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-1', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-1', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-2" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-2', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-2', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-3" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-3', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-3', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-4" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-4', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-4', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-5" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-5', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-5', 1)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbox-mix" data-price="1780" data-type="box">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">0-5號│0.4-0.8mm</div>
-           <div class="text-xs text-gray-500">🌈 綜合卡裝</div>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-mix', -1)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbox-mix">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbox-mix', 1)">+</button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">【袋裝】L型牙間刷</h3>
-       <p class="text-gray-600 mb-2">每袋 <span class="font-bold text-red-500">NT$ 715</span></p>
-       <p class="text-sm text-orange-600 mb-4">⚠️ 袋裝數量需為 2 的倍數（2袋 = 1盒）</p>
-       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-lbag"><img src="https://i.meee.com.tw/ycY1Rza.jpg" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/CG36pfd.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/iISzmbI.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/VgRxWsb.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/ASLeogA.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> <img src="https://i.meee.com.tw/jIO73WG.png" alt="L型牙間刷" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';">
-        </div><button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbag', -1)">‹</button> <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-lbag', 1)">›</button>
-       </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-0" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">0號│0.4mm│SSSS</div>
-           <div class="w-4 h-4 rounded-full bg-pink-400 inline-block"></div><span class="text-xs text-gray-500">粉紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-0', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-0">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-0', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-1" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">1號│0.45mm│SSS</div>
-           <div class="w-4 h-4 rounded-full bg-orange-400 inline-block"></div><span class="text-xs text-gray-500">橘色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-1', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-1">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-1', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-2" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">2號│0.5mm│SS</div>
-           <div class="w-4 h-4 rounded-full bg-red-500 inline-block"></div><span class="text-xs text-gray-500">紅色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-2', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-2">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-2', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-3" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">3號│0.6mm│S</div>
-           <div class="w-4 h-4 rounded-full bg-blue-500 inline-block"></div><span class="text-xs text-gray-500">藍色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-3', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-3">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-3', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-4" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">4號│0.7mm│M</div>
-           <div class="w-4 h-4 rounded-full bg-yellow-400 inline-block"></div><span class="text-xs text-gray-500">黃色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-4', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-4">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-4', 2)">+</button>
-          </div>
-         </div>
-        </div>
-        <div class="product-card rounded-xl p-3 bg-gray-50" data-product="lbag-5" data-price="715" data-type="bag">
-         <div class="flex justify-between items-center">
-          <div>
-           <div class="font-medium text-sm">5號│0.8mm│L</div>
-           <div class="w-4 h-4 rounded-full bg-green-500 inline-block"></div><span class="text-xs text-gray-500">綠色</span>
-          </div>
-          <div class="flex items-center gap-1">
-           <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-5', -2)">−</button> <span class="w-8 text-center font-bold text-sm" id="qty-lbag-5">0</span> <button type="button" class="qty-btn w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm" onclick="updateQty('lbag-5', 2)">+</button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
      </section>
      
      <section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">🧾 訂單摘要</h2>
-      <div id="bagWarning" class="warning-box rounded-xl p-4 mb-4 hidden">
-       <div class="flex items-center gap-2">
-        <span class="text-2xl">⚠️</span>
-        <div>
-         <div class="font-bold text-orange-800">袋裝數量需為 2 的倍數</div>
-         <div class="text-sm text-orange-700">目前袋裝總數量為奇數，請調整數量後才能提交訂單</div>
-        </div>
-       </div>
-      </div>
       
       <div id="paidProductsSection" class="mb-6">
        <h3 class="font-semibold mb-3 pb-2 border-b" style="color: var(--text-color);">📦 全部產品明細</h3>
@@ -850,7 +340,7 @@
        </div>
       </div>
       <div class="mt-4 text-center text-sm text-gray-600">
-       <span>總盒數（含袋裝換算）：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
+       <span>總盒數：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
       </div>
      </section>
      
@@ -1035,60 +525,17 @@
       "連江縣": ["南竿鄉", "北竿鄉", "莒光鄉", "東引鄉"]
     };
 
-    // Product names
+    // 產品中文名稱對應表 (EmailJS 會自動抓取這裡的中文)
     const productNames = {
-      'implant-care': '【卡裝】植牙護理牙刷 (All-On-4適用)',
-      'implant-ortho': '【卡裝】植牙/矯正專用牙刷',
-      'ibox-reg-0': '【卡裝】I型牙間刷(一般) 0號',
-      'ibox-reg-1': '【卡裝】I型牙間刷(一般) 1號',
-      'ibox-reg-2': '【卡裝】I型牙間刷(一般) 2號',
-      'ibox-reg-3': '【卡裝】I型牙間刷(一般) 3號',
-      'ibox-reg-4': '【卡裝】I型牙間刷(一般) 4號',
-      'ibox-reg-5': '【卡裝】I型牙間刷(一般) 5號',
-      'ibox-reg-6': '【卡裝】I型牙間刷(一般) 6號',
-      'ibox-reg-7': '【卡裝】I型牙間刷(一般) 7號',
-      'ibox-reg-8': '【卡裝】I型牙間刷(一般) 8號',
-      'ibox-reg-mix': '【卡裝】I型牙間刷(一般) 綜合',
-      'ibag-reg-0': '【袋裝】I型牙間刷(一般) 0號',
-      'ibag-reg-1': '【袋裝】I型牙間刷(一般) 1號',
-      'ibag-reg-2': '【袋裝】I型牙間刷(一般) 2號',
-      'ibag-reg-3': '【袋裝】I型牙間刷(一般) 3號',
-      'ibag-reg-4': '【袋裝】I型牙間刷(一般) 4號',
-      'ibag-reg-5': '【袋裝】I型牙間刷(一般) 5號',
-      'ibag-reg-6': '【袋裝】I型牙間刷(一般) 6號',
-      'ibag-reg-7': '【袋裝】I型牙間刷(一般) 7號',
-      'ibag-reg-8': '【袋裝】I型牙間刷(一般) 8號',
-      'ibox-soft-1': '【卡裝】I型牙間刷(超軟) 1號',
-      'ibox-soft-2': '【卡裝】I型牙間刷(超軟) 2號',
-      'ibox-soft-3': '【卡裝】I型牙間刷(超軟) 3號',
-      'ibox-soft-4': '【卡裝】I型牙間刷(超軟) 4號',
-      'ibox-soft-5': '【卡裝】I型牙間刷(超軟) 5號',
-      'ibox-soft-6': '【卡裝】I型牙間刷(超軟) 6號',
-      'ibox-soft-mix': '【卡裝】I型牙間刷(超軟) 綜合',
-      'ibag-soft-1': '【袋裝】I型牙間刷(超軟) 1號',
-      'ibag-soft-2': '【袋裝】I型牙間刷(超軟) 2號',
-      'ibag-soft-3': '【袋裝】I型牙間刷(超軟) 3號',
-      'ibag-soft-4': '【袋裝】I型牙間刷(超軟) 4號',
-      'ibag-soft-5': '【袋裝】I型牙間刷(超軟) 5號',
-      'ibag-soft-6': '【袋裝】I型牙間刷(超軟) 6號',
-      'lbox-0': '【卡裝】L型牙間刷 0號',
-      'lbox-1': '【卡裝】L型牙間刷 1號',
-      'lbox-2': '【卡裝】L型牙間刷 2號',
-      'lbox-3': '【卡裝】L型牙間刷 3號',
-      'lbox-4': '【卡裝】L型牙間刷 4號',
-      'lbox-5': '【卡裝】L型牙間刷 5號',
-      'lbox-mix': '【卡裝】L型牙間刷 綜合',
-      'lbag-0': '【袋裝】L型牙間刷 0號',
-      'lbag-1': '【袋裝】L型牙間刷 1號',
-      'lbag-2': '【袋裝】L型牙間刷 2號',
-      'lbag-3': '【袋裝】L型牙間刷 3號',
-      'lbag-4': '【袋裝】L型牙間刷 4號',
-      'lbag-5': '【袋裝】L型牙間刷 5號'
+      'single-tuft': '單頭刷',
+      'interspace': '間隙專用牙刷',
+      'floss-expanding': '膨脹牙線',
+      'floss-implant': '植牙專用牙線'
     };
 
     let quantities = {};
     let currentOrders = [];
-    let currentCart = { paid: [], gifts: [] }; // 用於儲存當前計算的產品與贈品
+    let currentCart = { paid: [], gifts: [] }; 
 
     const defaultConfig = {
       form_title: '醫師群組下單專屬表單'
@@ -1136,42 +583,27 @@
     // Calculate total 
     function calculateTotal() {
       let boxCount = 0;
-      let bagCount = 0;
       let subtotal = 0;
       const selectedProducts = [];
       
       document.querySelectorAll('.product-card').forEach(card => {
         const productId = card.dataset.product;
         const price = parseInt(card.dataset.price);
-        const type = card.dataset.type;
         const qty = quantities[productId] || 0;
         
         if (qty > 0) {
-          if (type === 'box') {
-            boxCount += qty;
-          } else {
-            bagCount += qty;
-          }
+          boxCount += qty;
           subtotal += price * qty;
           selectedProducts.push({
             id: productId,
             name: productNames[productId],
             price: price,
-            qty: qty,
-            type: type
+            qty: qty
           });
         }
       });
       
-      const equivalentBoxes = boxCount + Math.floor(bagCount / 2);
-      const bagWarning = document.getElementById('bagWarning');
-      const isBagCountValid = bagCount === 0 || bagCount % 2 === 0;
-      
-      if (!isBagCountValid) {
-        bagWarning.classList.remove('hidden');
-      } else {
-        bagWarning.classList.add('hidden');
-      }
+      const equivalentBoxes = boxCount;
       
       // Discount rate determination
       let discountRate = 1;
@@ -1203,7 +635,7 @@
           <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
             <div class="flex-1">
               <div class="font-medium text-sm">${p.name}</div>
-              <div class="text-xs text-gray-500">NT$ ${p.price.toLocaleString()} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}</div>
+              <div class="text-xs text-gray-500">NT$ ${p.price.toLocaleString()} x ${p.qty} 盒</div>
             </div>
             <div class="text-right font-bold" style="color: var(--text-color);">NT$ ${(p.price * p.qty).toLocaleString()}</div>
           </div>
@@ -1250,7 +682,7 @@
         standOptions.classList.add('hidden');
       }
       
-      updateSubmitButton(isBagCountValid && selectedProducts.length > 0);
+      updateSubmitButton(selectedProducts.length > 0);
     }
 
     function updateSubmitButton(productsValid) {
@@ -1259,10 +691,7 @@
       
       if (!productsValid) {
         submitBtn.disabled = true;
-        if (getTotalBagCount() % 2 !== 0 && getTotalBagCount() > 0) {
-          submitError.textContent = '請調整袋裝數量為 2 的倍數';
-          submitError.classList.remove('hidden');
-        } else if (getTotalProductCount() === 0) {
+        if (getTotalProductCount() === 0) {
           submitError.textContent = '請至少選擇一項產品';
           submitError.classList.remove('hidden');
         }
@@ -1270,14 +699,6 @@
         submitBtn.disabled = false;
         submitError.classList.add('hidden');
       }
-    }
-
-    function getTotalBagCount() {
-      let bagCount = 0;
-      document.querySelectorAll('.product-card[data-type="bag"]').forEach(card => {
-        bagCount += quantities[card.dataset.product] || 0;
-      });
-      return bagCount;
     }
 
     function getTotalProductCount() {
@@ -1356,8 +777,8 @@
       const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || '';
       
       // 將產品明細轉為換行的易讀文字
-      const productsText = currentCart.paid.map(p => `${p.name} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}`).join('\n');
-      let giftsText = currentCart.gifts.map(p => `${p.name} x ${p.qty} ${p.type === 'box' ? '盒' : '袋'}`).join('\n');
+      const productsText = currentCart.paid.map(p => `${p.name} x ${p.qty} 盒`).join('\n');
+      let giftsText = currentCart.gifts.map(p => `${p.name} x ${p.qty} 盒`).join('\n');
       
       // 如果選擇先匯款，自動在贈品加上特定文字
       if (selectedPaymentMethod === 'transfer') {
@@ -1400,8 +821,8 @@
             payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款', 
             invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',  
             invoice_title: formData.invoice_title || '無', 
-            tax_id: formData.tax_id || '無',               
-            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),      
+            tax_id: formData.tax_id || '無',                
+            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),       
             magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'), 
             products_list: productsText,          
             gifts_list: giftsText || '無',        
