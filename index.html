@@ -184,133 +184,260 @@
        <div class="text-xs mt-1 font-bold text-yellow-200">並贈送【磁吸階梯式展示架】</div>
       </div>
      </div>
-     <p class="text-center text-sm mt-4 opacity-90">※ 全館品項均享折扣</p>
+     <p class="text-center text-sm mt-4 opacity-90">※ 全館品項均享合併折扣計算</p>
     </div>
     
     <form id="orderForm" class="space-y-8 max-w-6xl mx-auto"> 
      <section class="bg-white rounded-2xl shadow-lg p-6">
       <h2 class="section-title text-xl font-bold mb-6" style="color: var(--text-color);">📦 產品選購</h2>
       
-      <!-- 單頭刷 -->
+      <!-- 1. (迷你)至尊雙層刷毛牙刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">單頭刷</h3>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">(迷你)至尊雙層刷毛牙刷</h3>
        <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,960</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-single-tuft">
-         <img src="https://i.meee.com.tw/AEoZObj.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/W13dEix.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/bDxrd3H.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-supreme">
+         <img src="https://i.meee.com.tw/GSxGWjd.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/vjPDWtQ.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/Qu9sHY0.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-single-tuft', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-single-tuft', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-supreme', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="single-tuft" data-price="1960">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="supreme-mini" data-price="1960" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">單頭刷</div>
-           <div class="text-sm text-gray-500">卡裝 (1盒14支)</div>
+           <div class="font-medium">迷你至尊雙層刷毛牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('single-tuft', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-single-tuft">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('single-tuft', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-mini', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-supreme-mini">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-mini', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="supreme-standard" data-price="1960" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">至尊雙層刷毛牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-standard', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-supreme-standard">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('supreme-standard', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
-      <!-- 間隙專用牙刷 -->
+      <!-- 2. 深層潔淨牙刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">間隙專用牙刷</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 3,920</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">深層潔淨牙刷</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,680</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-interspace">
-         <img src="https://i.meee.com.tw/my4WlLC.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/nyAzEfb.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/9haERE7.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-nova">
+         <img src="https://i.meee.com.tw/LDKZDjE.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/w5ONWnI.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/qTb8yve.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/8G3bXEZ.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-interspace', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-interspace', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-nova', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-nova', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="interspace" data-price="3920">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="nova-soft" data-price="1680" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">間隙專用牙刷</div>
-           <div class="text-sm text-gray-500">卡裝 (1盒14支)</div>
+           <div class="font-medium">軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('interspace', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-interspace">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('interspace', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('nova-soft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-nova-soft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('nova-soft', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="nova-xsoft" data-price="1680" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">超軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('nova-xsoft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-nova-xsoft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('nova-xsoft', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
-      <!-- 膨脹牙線 -->
+      <!-- 3. 精選全效牙刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">膨脹牙線</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 2,500</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">精選全效牙刷</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,400</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-floss-expanding">
-         <img src="https://i.meee.com.tw/A4NnZdr.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/nhfjPAH.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/RANldg5.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-select">
+         <img src="https://i.meee.com.tw/MX2IGHi.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/GHR1rCn.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/u5CH1ev.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/9nl1ZpJ.jpg" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-expanding', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-expanding', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-select', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-select', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="floss-expanding" data-price="2500">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="select-regular-soft" data-price="1400" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">膨脹牙線</div>
-           <div class="text-sm text-gray-500">卡裝 (1盒10卡)</div>
+           <div class="font-medium">一般刷毛／軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-expanding', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-floss-expanding">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-expanding', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-regular-soft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-select-regular-soft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-regular-soft', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="select-regular-xsoft" data-price="1400" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">一般刷毛／超軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-regular-xsoft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-select-regular-xsoft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-regular-xsoft', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="select-compact-soft" data-price="1400" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">纖細刷毛／軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-compact-soft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-select-compact-soft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-compact-soft', 1)">+</button>
+          </div>
+         </div>
+        </div>
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="select-compact-xsoft" data-price="1400" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">纖細刷毛／超軟毛</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-compact-xsoft', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-select-compact-xsoft">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('select-compact-xsoft', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
-      <!-- 植牙專用牙線 -->
+      <!-- 4. 迷你幼兒牙刷 -->
       <div class="mb-8">
-       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">植牙專用牙線</h3>
-       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 4,000</span></p>
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">迷你幼兒牙刷 (0-3歲適用)</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,820</span></p>
        <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
-        <div class="carousel-container flex h-full" id="carousel-floss-implant">
-         <img src="https://i.meee.com.tw/hFV1H8u.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/0HDZgRG.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
-         <img src="https://i.meee.com.tw/ebIMp0W.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        <div class="carousel-container flex h-full" id="carousel-kids-mini">
+         <img src="https://i.meee.com.tw/HFWe4L2.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/wNXB1Rl.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/6tINbry.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
         </div>
-        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-implant', -1)">‹</button> 
-        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-floss-implant', 1)">›</button>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-kids-mini', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-kids-mini', 1)">›</button>
        </div>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="floss-implant" data-price="4000">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="kids-mini" data-price="1820" data-type="box">
          <div class="flex justify-between items-center">
           <div>
-           <div class="font-medium">植牙專用牙線</div>
-           <div class="text-sm text-gray-500">卡裝 (1盒10卡)</div>
+           <div class="font-medium">迷你幼兒牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
           </div>
           <div class="flex items-center gap-2">
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-implant', -1)">−</button> 
-           <span class="w-12 text-center font-bold" id="qty-floss-implant">0</span> 
-           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('floss-implant', 1)">+</button>
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('kids-mini', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-kids-mini">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('kids-mini', 1)">+</button>
           </div>
          </div>
         </div>
        </div>
       </div>
 
+      <!-- 5. 兒童牙刷 -->
+      <div class="mb-8">
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">兒童牙刷 (3歲以上適用)</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 1,820</span></p>
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
+        <div class="carousel-container flex h-full" id="carousel-kids-regular">
+         <img src="https://i.meee.com.tw/K96HdeH.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/jhOMYT1.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/sEoCJGU.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-kids-regular', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-kids-regular', 1)">›</button>
+       </div>
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="kids-regular" data-price="1820" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">兒童牙刷</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('kids-regular', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-kids-regular">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('kids-regular', 1)">+</button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <!-- 6. 舌苔清潔器 -->
+      <div class="mb-8">
+       <h3 class="text-lg font-semibold mb-4" style="color: var(--text-color);">舌苔清潔器</h3>
+       <p class="text-gray-600 mb-4">每盒 <span class="font-bold text-red-500">NT$ 3,080</span></p>
+       <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-100 h-48 md:h-[300px]">
+        <div class="carousel-container flex h-full" id="carousel-tongue-cleaner">
+         <img src="https://i.meee.com.tw/enPKmz5.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/KjiA9Yk.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+         <img src="https://i.meee.com.tw/Ui1nFhw.png" class="carousel-slide object-contain" loading="lazy" onerror="this.style.background='#e5e7eb';"> 
+        </div>
+        <button type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-tongue-cleaner', -1)">‹</button> 
+        <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center z-10 text-gray-800 font-bold" onclick="scrollCarousel('carousel-tongue-cleaner', 1)">›</button>
+       </div>
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="product-card rounded-xl p-4 bg-gray-50" data-product="tongue-cleaner" data-price="3080" data-type="box">
+         <div class="flex justify-between items-center">
+          <div>
+           <div class="font-medium">舌苔清潔器</div>
+           <div class="text-sm text-gray-500">卡裝</div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('tongue-cleaner', -1)">−</button> 
+           <span class="w-12 text-center font-bold" id="qty-tongue-cleaner">0</span> 
+           <button type="button" class="qty-btn w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center" onclick="updateQty('tongue-cleaner', 1)">+</button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      
      </section>
      
      <section id="orderSummary" class="bg-white rounded-2xl shadow-lg p-6 hidden max-w-6xl mx-auto">
@@ -340,7 +467,7 @@
        </div>
       </div>
       <div class="mt-4 text-center text-sm text-gray-600">
-       <span>總盒數：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
+       <span>總數量：<span id="boxCountDisplay" class="font-bold" style="color: var(--text-color);">0</span> 盒</span>
       </div>
      </section>
      
@@ -525,12 +652,19 @@
       "連江縣": ["南竿鄉", "北竿鄉", "莒光鄉", "東引鄉"]
     };
 
-    // 產品中文名稱對應表 (EmailJS 會自動抓取這裡的中文)
+    // Product names (Bag brushes fully removed)
     const productNames = {
-      'single-tuft': '單頭刷',
-      'interspace': '間隙專用牙刷',
-      'floss-expanding': '膨脹牙線',
-      'floss-implant': '植牙專用牙線'
+      'supreme-mini': '【卡裝】迷你至尊雙層刷毛牙刷',
+      'supreme-standard': '【卡裝】至尊雙層刷毛牙刷',
+      'nova-soft': '【卡裝】深層潔淨牙刷 (軟毛)',
+      'nova-xsoft': '【卡裝】深層潔淨牙刷 (超軟毛)',
+      'select-regular-soft': '【卡裝】精選全效牙刷 (一般刷毛/軟毛)',
+      'select-regular-xsoft': '【卡裝】精選全效牙刷 (一般刷毛/超軟毛)',
+      'select-compact-soft': '【卡裝】精選全效牙刷 (纖細刷毛/軟毛)',
+      'select-compact-xsoft': '【卡裝】精選全效牙刷 (纖細刷毛/超軟毛)',
+      'kids-mini': '【卡裝】迷你幼兒牙刷 (0-3歲適用)',
+      'kids-regular': '【卡裝】兒童牙刷',
+      'tongue-cleaner': '【卡裝】舌苔清潔器'
     };
 
     let quantities = {};
@@ -598,21 +732,20 @@
             id: productId,
             name: productNames[productId],
             price: price,
-            qty: qty
+            qty: qty,
+            type: 'box'
           });
         }
       });
       
-      const equivalentBoxes = boxCount;
-      
       // Discount rate determination
       let discountRate = 1;
       
-      if (equivalentBoxes >= 1 && equivalentBoxes <= 2) {
+      if (boxCount >= 1 && boxCount <= 2) {
         discountRate = 0.9;
-      } else if (equivalentBoxes >= 3 && equivalentBoxes <= 9) {
+      } else if (boxCount >= 3 && boxCount <= 9) {
         discountRate = 0.7;
-      } else if (equivalentBoxes >= 10) {
+      } else if (boxCount >= 10) {
         discountRate = 0.6;
       }
       
@@ -649,7 +782,7 @@
         document.getElementById('discountRateDisplay').textContent = Math.round(discountRate * 100) / 10;
         document.getElementById('discountDisplay').textContent = `-NT$ ${(paidTotal - discountedSubtotal).toLocaleString()}`;
         document.getElementById('totalDisplay').textContent = `NT$ ${total.toLocaleString()}`;
-        document.getElementById('boxCountDisplay').textContent = equivalentBoxes;
+        document.getElementById('boxCountDisplay').textContent = boxCount;
         
         const shippingRow = document.getElementById('shippingRow');
         if (shippingFee > 0) {
@@ -658,22 +791,22 @@
           shippingRow.classList.add('hidden');
         }
         
-        // Chair Stand Threshold logic update (3 boxes)
-        if (equivalentBoxes >= 3) {
+        // Chair Stand Threshold logic (3 boxes)
+        if (boxCount >= 3) {
           standOptions.classList.remove('hidden');
           document.getElementById('chairStandOption').classList.remove('hidden');
         } else {
           document.getElementById('chairStandOption').classList.add('hidden');
         }
         
-        // Magnetic Stand logic update (10 boxes)
-        if (equivalentBoxes >= 10) {
+        // Magnetic Stand logic (10 boxes)
+        if (boxCount >= 10) {
           document.getElementById('magneticStandOption').classList.remove('hidden');
         } else {
           document.getElementById('magneticStandOption').classList.add('hidden');
         }
         
-        if (equivalentBoxes < 3) {
+        if (boxCount < 3) {
           standOptions.classList.add('hidden');
         }
         
@@ -778,7 +911,7 @@
       
       // 將產品明細轉為換行的易讀文字
       const productsText = currentCart.paid.map(p => `${p.name} x ${p.qty} 盒`).join('\n');
-      let giftsText = currentCart.gifts.map(p => `${p.name} x ${p.qty} 盒`).join('\n');
+      let giftsText = '';
       
       // 如果選擇先匯款，自動在贈品加上特定文字
       if (selectedPaymentMethod === 'transfer') {
@@ -821,8 +954,8 @@
             payment_method: selectedPaymentMethod === 'transfer' ? '先匯款後發貨' : '貨到付款', 
             invoice_type: formData.invoice_type === 'triplicate' ? '三聯式發票' : '二聯式發票',  
             invoice_title: formData.invoice_title || '無', 
-            tax_id: formData.tax_id || '無',                
-            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),       
+            tax_id: formData.tax_id || '無',               
+            chair_stand: formData.want_chair_stand === 'yes' ? '需要' : (formData.want_chair_stand === 'no' ? '不需要' : '未達條件'),      
             magnetic_stand: formData.want_magnetic_stand === 'yes' ? '需要' : (formData.want_magnetic_stand === 'no' ? '不需要' : '未達條件'), 
             products_list: productsText,          
             gifts_list: giftsText || '無',        
